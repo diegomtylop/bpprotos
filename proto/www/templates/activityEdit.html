@@ -1,0 +1,81 @@
+<!--Pantalla en la que se ingresa o edita la información de una actividad-->
+<ion-view class="has-header" view-title="Actividad">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="guardarActividad()">Guardar</button>
+    </ion-nav-buttons>
+    
+    <div class="pane content">
+    <ion-content class="has-header">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Nombre" ng-model="actividad.nombre">
+          </label>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Tipo
+            </div>
+            <select>
+              <option>Alojamiento</option>
+              <option selected>Deportes</option>
+              <option>Estilo de vida</option>
+                <option>Religion</option>
+                <option>Comida</option>
+                <option>Deportes extremos</option>
+            </select>
+          </label>
+            <div class="item item-divider">
+                Duración
+            </div>
+
+            <div class="item  item-input">
+                <div class="input-label">
+                  Inicio
+                </div>
+                <input type="text" placeholder="Nombre">
+            </div>
+
+            <div class="item  item-input">
+                <div class="input-label">
+                  Hora fin
+                </div>
+                <input type="text" placeholder="Nombre">
+            </div>
+
+            <div class="item item-divider">
+                Costo aproximado
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Costo" ng-model="actividad.costo">
+                {{actividad.costo | currency}}
+            </label>
+            <div class="item item-divider">
+                Otras opciones
+            </div>
+            
+            <div class="item item-toggle">
+                Actividad privada?
+                <label class="toggle">
+                
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            
+            <div class="item item-toggle">
+                ¿Es opcional?
+                <label class="toggle">
+                
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+        </div><!--.list-->
+        
+        
+    </ion-content>
+</div>
+</ion-view>

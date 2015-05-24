@@ -1,0 +1,61 @@
+<ion-view view-title="Nuevo itinerario">
+    
+<ion-nav-back-button>
+  </ion-nav-back-button>
+  <ion-nav-buttons side="right">
+    <button ng-click="saveItinerario();" class="button">Guardar</button>
+  </ion-nav-buttons>
+    
+    
+  <ion-content>
+      <form ng-submit="saveItinerario(itinerario)">
+        <label class="item item-input">
+            <input type="text" ng-model="itinerario.nombre" placeholder="Dale un nombre memorable"/>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Fecha de salida</span>
+            <input type="date" ng-model="fechaSalida" placeholder="Fecha de salida"/>
+        </label>
+        <label class="item item-input">
+            <span class="input-label" ng-model="fechaRegreso">Fecha de regreso</span>
+            <input type="date" placeholder="Fecha de salida"/>
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Días</span>
+            <span style="padding-right:1em">{{ fechaRegreso | date : 'dd'  }} - {{ fechaSalida | date : 'dd'}}</span>
+            <span class="input-label">Noches</span>
+            <span style="padding-right:1em">3</span>
+        </label>
+        
+        <label class="item item-input">
+            <span class="input-label">Tienes un presupuesto en mente?</span>
+            <label class="toggle">
+                <input type="checkbox" ng-model="itinerario.conPresup">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+            </label>
+        </label>
+        
+        <hr/>
+        
+        <label class="item item-input" ng-show="itinerario.conPresup">
+            <input type="text" placeholder="Presupuesto..." ng-model="itinerario.presupuestDisponible"> {{itinerario.presupuestDisponible | currency}}
+          </label>
+          
+        <hr  ng-show="itinerario.conPresup"/>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Descripción</span>
+            
+            <textarea placeholder="Razones por las que este viaje será increíble" rows="4"></textarea>
+          </label>
+        
+        <label class="item item-input">
+            <span class="input-label">¿Añadir ubicación?</span>
+            <button ui-sref="app.mapa" class="button icon-left ion-location">Mapa</button>
+        </label>
+          
+          <button type="submit" class="button button-block button-positive">Guardar itinerario</button>
+      </form>
+  </ion-content>
+</ion-view>

@@ -13,7 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+/testtabs
 # Windows shortcuts
 *.lnk
 

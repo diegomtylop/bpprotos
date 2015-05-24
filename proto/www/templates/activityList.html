@@ -1,0 +1,58 @@
+<ion-view view-title="{{itinerario.nombre}}">    
+  
+    <ion-tabs>
+     <ion-tab title="Dia {{dia.id}}" ng-repeat="dia in dias">
+         <!-- Tab 1 content -->
+        <ion-header-bar class="bar-positive">
+          <h1 class="title">Hello</h1>
+        </ion-header-bar>
+            <ion-content class="has-header">
+                <div class="card">
+                    <div class="item item-divider">
+                        notas
+                      </div>
+                  <div class="item item-text-wrap item-input">
+                    <textarea rows="3" ng-model="dia.notas"></textarea>
+                  </div>
+                </div>
+
+                <ul class="list">
+                    <div class="item item-divider">
+                        Itinerario
+                      </div>
+                    <li class="item  item-button-right  item-icon-right">
+                        <strong>08:00</strong>
+                        Acomodación en el hostal
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </li>
+                    <li class="item  item-button-right  item-icon-right">
+                        <strong>11:00</strong>
+                        Buscar lugar para almorzar
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </li>
+                    <li class="item  item-button-right  item-icon-right">
+                        <strong>14:00</strong>
+                      Comprar viveres
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </li>
+                    <li class="item  item-button-right  item-icon-right">
+                        <strong>15:00</strong>
+                      Tramitar pasaporte
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </li>
+                    <li class="item  item-button-right  item-icon-right">
+                    <li class="item  item-button-right  item-icon-right">
+                        <strong>19:00</strong>
+                      Noche libre
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </li>
+                </ul>
+
+                <button class="btn_flotante"   ui-sref="app.activityedit">
+                <i class="icon ion-plus-round"></i>
+                </button>
+            </ion-content>
+     </ion-tab>
+</ion-tabs>
+   
+</ion-view>

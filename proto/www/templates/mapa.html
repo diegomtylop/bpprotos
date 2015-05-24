@@ -1,0 +1,21 @@
+<ion-view view-title="Mapa">
+    
+    <h2>{{pais}}</h2>
+    <div class="card">
+        <div class="item item-text-wrap" >
+            En esta pantalla se debe permitir seleccionar la posición de referencia para el itinerario
+        </div>
+    </div>
+    
+    <button ng-click="obtenerPosicionActual()" class="button icon-left ion-location" >Obtener ubicacion</button>
+    
+    <div class="card" ng-show="posicion">
+        <div class="item">
+            Coordenadas actuales: {{posicion}}
+        </div>
+        <div class="item item-divider">
+            <button ui-sref="app.create" class="button icon-left">Guardar</button>
+        </div>
+        
+    </div>
+</ion-view>
