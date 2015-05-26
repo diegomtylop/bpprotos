@@ -21,19 +21,23 @@ angular.module('starter.controllers', [])
     $scope.dias = [
         {
             id:'1',
-            notas:'Notas de la actividad 1'
+            notas:'Notas de la actividad 1',
+            nombre:'Martes 12'
         },
         {
             id:'2',
-            notas:'Notas de la actividad 2'
+            notas:'Notas de la actividad 2',
+            nombre:'Miércoles 13'
         },
         {
             id:'3',
-            notas:'Notas de la actividad 3'
+            notas:'Notas de la actividad 3',
+            nombre:'Jueves 14'
         },
         {
             id:'4',
-            notas:'Notas de la actividad 4'
+            notas:'Notas de la actividad 4',
+            nombre:'Viernes 15'
         }
     ]
 

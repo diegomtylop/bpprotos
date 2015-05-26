@@ -67,6 +67,28 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
   
+  //Pantalla donde se listan los días
+  .state('app.days', {
+    url: "/days",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/daysList.html",
+          controller: 'AppCtrl'
+      }
+    }
+  })
+  
+  //Pantalla donde se listan los días
+  .state('app.dayDeail', {
+    url: "/daysdetail",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/dayDetail.html",
+          controller: 'AppCtrl'
+      }
+    }
+  })
+  
   //Pantalla para listar las actividades
   .state('app.activityList', {
     url: "/activity",
