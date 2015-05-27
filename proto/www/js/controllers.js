@@ -116,5 +116,47 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+    
+}).controller('ActivityCtrl', function($scope, $stateParams, $ionicModal) {
+    
+    $scope.nombre = 'Diego';
+    $scope.tiposActividad=[{nombre:'Alojamiento',icon:'ion-home'},
+                  {nombre:'Deportes',icon:'ion-trophy'},
+                  {nombre:'Estilo de vida',icon:'ion-person'},
+                    {nombre:'Religion',icon:'ion-plus-round'},
+                    {nombre:'Comida',icon:'ion-pizza'},
+                    {nombre:'Deportes extremos',icon:'ion-speedometer'}];
+    
+    $scope.selected = [];
+    
+    $ionicModal.fromTemplateUrl('templates/activityType.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal
+    })  
+    
+    $scope.openModal = function() {
+        $scope.modal.show()
+    }
+    
+    $scope.closeModal = function() {
+        $scope.modal.hide()
+    }
+    
+    $scope.selectType = function( index ){
+        //alert(index);
+        //$scope.selected.push( $scope.tiposActividad[index]);
+        if($scope.tiposActividad[index].selected){
+            $scope.tiposActividad[index].selected = false;
+        }else{
+            $scope.tiposActividad[index].selected = true;
+        }
+    }
+    
+    $scope.isSelected = function(index){
+        return $scope.tiposActividad[index].selected;
+    }
 });
+
 
