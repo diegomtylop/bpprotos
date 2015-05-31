@@ -110,6 +110,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+  //Pantalla para crear una actividad
+  .state('app.activitysearch', {
+    url: "/activitysearch",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/activitySearch.html",
+          controller: 'ActivityCtrl'
+      }
+    }
+  })
 
   .state('app.single', {
     url: "/playlists/:playlistId",

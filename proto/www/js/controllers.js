@@ -22,22 +22,26 @@ angular.module('starter.controllers', [])
         {
             id:'1',
             notas:'Notas de la actividad 1',
-            nombre:'Martes 12'
+            nombre:'Martes 12',
+            cover:'img/1.jpg'
         },
         {
             id:'2',
             notas:'Notas de la actividad 2',
-            nombre:'Miércoles 13'
+            nombre:'Miércoles 13',
+            cover:'img/2.jpg'
         },
         {
             id:'3',
             notas:'Notas de la actividad 3',
-            nombre:'Jueves 14'
+            nombre:'Jueves 14',
+            cover:'img/club.jpg'
         },
         {
             id:'4',
             notas:'Notas de la actividad 4',
-            nombre:'Viernes 15'
+            nombre:'Viernes 15',
+            cover:'img/eat.jpg'
         }
     ]
 
@@ -123,9 +127,26 @@ angular.module('starter.controllers', [])
     $scope.tiposActividad=[{nombre:'Alojamiento',icon:'ion-home'},
                   {nombre:'Deportes',icon:'ion-trophy'},
                   {nombre:'Estilo de vida',icon:'ion-person'},
-                    {nombre:'Religion',icon:'ion-plus-round'},
+                    {nombre:'Religion',icon:'ion-cash'},
                     {nombre:'Comida',icon:'ion-pizza'},
                     {nombre:'Deportes extremos',icon:'ion-speedometer'}];
+    
+    $scope.actividades = [{nombre:'Templo de los mil recuerdos',imagen:'img/activities/temple.jpg',costo:'', tipos:[
+                                {nombre:'Religion',icon:'ion-cash'}]},
+                         {nombre:'Parque de las materas felices',imagen:'img/activities/park.jpg',costo:'$5.000',tipos:[
+                                {nombre:'Estilo de vida',icon:'ion-person'}]},
+                         {nombre:'Teatro colón de Guaduas',imagen:'img/activities/theater.jpg',costo:'$15.000',tipos:[
+                                {nombre:'Deportes',icon:'ion-trophy'},
+                                {nombre:'Estilo de vida',icon:'ion-person'},
+                                {nombre:'Deportes extremos',icon:'ion-speedometer'}]},
+                         {nombre:'Mina de coltant rosado',imagen:'img/activities/mine.jpg',costo:'$25.000',tipos:[
+                                {nombre:'Estilo de vida',icon:'ion-person'},
+                                {nombre:'Deportes extremos',icon:'ion-speedometer'}]},
+                         {nombre:'Nevado de la sierra corta',imagen:'img/activities/snowy.jpg',costo:'$60.000',tipos:[
+                                {nombre:'Alojamiento',icon:'ion-home'},
+                                {nombre:'Deportes',icon:'ion-trophy'},
+                                {nombre:'Deportes extremos',icon:'ion-speedometer'}]}
+    ];
     
     $scope.selected = [];
     

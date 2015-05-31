@@ -62,6 +62,45 @@
             </a>
         </div>
         
+        <div class="item item-divider">
+        Opción 4
+        </div>
+        
+        <div class="list" ng-repeat="dia in dias">
+            <a class="item item-thumbnail-left" href="#/app/daysdetail"> 
+                
+                <img ng-src="{{dia.cover}}"/>
+                <h2>{{dia.nombre}}</h2>
+                
+                <span class="badge badge-calm">
+                  $40.000.00
+                </span>
+                
+                <p>4 Actividades</p>
+                
+                
+            </a>
+        </div>
+        
+        <div class="item item-divider">
+        Opción 5
+        </div>
+        
+        <div class="list" ng-repeat="dia in dias">
+            <a class="item item-thumbnail-top" href="#/app/daysdetail"> 
+                
+                <img ng-src="{{dia.cover}}" style="width:100%"/>
+                <h2>{{dia.nombre}}</h2>
+                
+                
+                
+                <p>4 Actividades</p>
+                <span>$40.000</span>
+                
+                
+            </a>
+        </div>
+        
     
     </ion-content>
     <!--ui-sref="app.activityedit"-->
