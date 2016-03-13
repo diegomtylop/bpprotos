@@ -1,0 +1,60 @@
+<ion-view title="Plan - Presupuesto planeado">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h3>Gastos planeado</h3>
+        <form class="list">
+            <div>
+                <div>
+                    <p>
+                        <strong>Total por actividades</strong>
+                        <span style="float:right">$740.000</span>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>
+                        <strong>Total por otros gastos</strong>
+                        <span style="float:right">
+                            $340.000</span>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div style="color:blue;">
+                    <hr>
+                    <p>
+                        <strong>Total presupuesto:</strong>
+
+                        <span style="float:right">
+                            <b>$740.000</b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <ion-toggle toggle-class="toggle-positive">Alertar límite de presupuesto</ion-toggle>
+            <label class="item item-input">
+                <span class="input-label">Límite presupuesto</span>
+                <input type="text" placeholder="$000.00">
+            </label>
+            <div class="spacer" style="width: 283px; height: 32px;"></div>
+            <button class="button button-balanced button-block  icon-left ion-android-add">nuevo gasto</button>
+            <ion-item class="item-divider">Otros gastos</ion-item>
+            <label class="item item-input">
+                <span class="input-label">Alojamiento: $50.000</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Transporte $210.000</span>
+                <input type="text" placeholder="">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Alimentación $80.000</span>
+                <input type="text" placeholder="">
+            </label>
+        </form>
+        <div class="button-bar">
+            <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-positive button-block  icon-left ion-chevron-left">Itinerario</a>
+            <a ui-sref="planeados.viajes" class="button button-assertive button-block  icon-right ion-ios-checkmark">Guardar viaje</a>
+        </div>
+    </ion-content>
+</ion-view>

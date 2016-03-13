@@ -1,0 +1,50 @@
+<ion-view title="Actual - Editar actividad">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h2>Ascenso al páramo</h2>
+        <div>
+            <p>Se recomienda llevar ropa de licra o impermeable, nada de algodón pues este absorbe el agua del aire</p>
+        </div>
+        <div>
+            <div>
+                <h4>Tipo de actividad</h4>
+                <div>
+
+                    <i class="icon ionicon ion-android-bulb" style="font-size:2em"></i>&nbsp;&nbsp;&nbsp;
+                    <i class="ion-android-walk" style="font-size:2em"></i>&nbsp;&nbsp;&nbsp;
+                    <i class="ion-android-bus" style="font-size:2em"></i>
+                </div>
+            </div>
+        </div>
+        <a ui-sref="planEditarActividad" class="button button-positive   icon-right ion-edit">Editar</a>
+        <div class="list card">
+            <div class="item item-divider">Detalles actividad</div>
+            <div class="item item-body">
+                <form class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Valor</span>
+                        <input type="text" placeholder="">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Duración</span>
+                        <input type="text" placeholder="">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Notas</span><textarea placeholder=""> </textarea>
+                    </label>
+                    <button class="button button-stable button-outline  icon-left ion-location button-full">Ubicación</button>
+                </form>
+            </div>
+        </div>
+        <h4>Fotos</h4>
+        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        </div>
+        <form class="list"></form>
+        <div class="button-bar"></div>
+        <div class="button-bar">
+            <a ui-sref="tabsViajeActual.actualActividadesParaHoy" class="button button-energized button-block  icon-right ion-checkmark-circled">Hecho!</a>
+            <button class="button button-calm button-block  icon-left ion-android-camera">Foto!</button>
+            <button class="button button-assertive button-block  icon-left ion-android-cancel">Cancelar</button>
+        </div>
+    </ion-content>
+</ion-view>

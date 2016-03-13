@@ -1,0 +1,48 @@
+<ion-view title="Plan - Lista de días">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <a ui-sref="mochiApp.inicio" class="button button-stable  button-small icon-left ion-chevron-left">Volver a mis viajes</a>
+        <ion-list></ion-list>
+        <div class="button-bar">
+            <button class="button button-positive button-block ">Días</button>
+            <a ui-sref="tabsPlaneacion.planListaDeDAsVistaActividades" class="button button-light button-block ">Actividades</a>
+            <a ui-sref="tabsPlaneacion.planListaDeDAsVistaLugares" class="button button-light button-block ">Lugares</a>
+        </div>
+        <div>
+            <p>
+                <strong>Opciones para cada día:</strong>
+                Eliminar, Cambiar orden, Editar alias A cada día mostrar cuanto es el presupuesto plaeado</p>
+        </div>
+        <a ui-sref="planAAdirDA" class="button button-balanced button-block  icon-left ion-android-add">Añadir día</a>
+        <ion-list>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Día 1 - Viaje turbo</h2>
+                <p>2 Actividades</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Día 2 - Lancha zapsurro</h2>
+                <p>3 Actividades</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Día 3 - Playa</h2>
+                <p>4 Actividades</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Día 4 - Visita a la miel</h2>
+                <p>4 Actividades</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Día 5 - Regreso</h2>
+                <p>4 Actividades</p>
+            </ion-item>
+        </ion-list>
+        <div class="button-bar">
+            <a ui-sref="tabsPlaneacion.planInformaciNGeneral" class="button button-balanced button-block  icon-left ion-chevron-left">Info general</a>
+            <a ui-sref="tabsPlaneacion.planPresupuestoPlaneado" class="button button-assertive button-block  icon-right ion-chevron-right">Plan de gastos</a>
+        </div>
+    </ion-content>
+</ion-view>

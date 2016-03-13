@@ -1,0 +1,37 @@
+<!--Prueba para ver si puedo tener navegación y tabs al mismo tiempo-->
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-tabs class="tabs-stable tabs-icon-top has-header">
+        <ion-tab title="Est 1" icon="ion-ios-list"  href="#/tab/home">
+            <ion-nav-view name="tab1"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Est 2" icon="ion-android-walk" href="#/tab/facts">
+            <ion-nav-view name="tab2"></ion-nav-view>
+        </ion-tab>
+        </ion-tabs>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+            <div class="title">Menú izquierdo</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list>
+                <ion-item ui-sref="navTab.sencillo" menu-close="">Sencillo</ion-item>
+                <ion-item ui-sref="navTab.tabs.tab1" menu-close="">Tab 1</ion-item>
+                <ion-item ui-sref="navTab.tabs.tab2" menu-close="">Tab 2</ion-item>
+                
+                <ion-item ui-sref="trucoNav" menu-close="">Tabs con truco</ion-item>
+                
+                <ion-item ui-sref="tabs.home" menu-close="">Tabs estáticas</ion-item>
+
+                <ion-item ui-sref="mochiApp.inicio" menu-close="">Inicio</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

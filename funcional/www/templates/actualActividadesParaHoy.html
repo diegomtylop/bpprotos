@@ -1,0 +1,31 @@
+<ion-view title="Actual - Actividades para hoy">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <a ui-sref="mochiApp.inicio" class="button   button-small icon-left ion-android-arrow-back">Volver a mis viajes</a>
+        <h2>Abril 07</h2>
+        <div>
+            <p>Temperatura promedio 23°C/ tiempo seco</p>
+        </div>
+        <a ui-sref="planEditarActividad" class="button button-balanced   icon-left ion-android-add">Añadir</a>
+        <div class="button-bar">
+            <button class="button button-stable button-block ">&lt;</button>
+            <button class="button button-positive button-block ">Hoy</button>
+            <a ui-sref="tabsViajeActual.actualActividadesParaMaAna" class="button button-stable button-block ">&gt;</a>
+        </div>
+        <div>
+            <p>Cada una de las actividades (no hechas) debe tener un botón que permita marcarlas como hechas, y otro que permita editar la información</p>
+        </div>
+        <ion-list>
+            <ion-item class="item-divider">Actividades en la mañana</ion-item>
+            <ion-item ui-sref="actualEditarActividad">Encontrar alojamiento</ion-item>
+            <ion-item ui-sref="actualEditarActividad">Visitar plaza principal</ion-item>
+            <ion-item class="item-divider">Actividades en la tarde</ion-item>
+            <ion-item ui-sref="actualEditarActividad">Visitar plaza de Ricaurte</ion-item>
+            <ion-item ui-sref="actualEditarActividad">Ver el atardecer desde el mirador</ion-item>
+        </ion-list>
+        <div class="spacer" style="width: 283px; height: 56px;"></div>
+        <ion-list>
+            <ion-item class="item-divider">Actividades hechas</ion-item>
+            <ion-item>Desayuno ($5.000)</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,80 @@
+<ion-view title="Mis viajes realizados">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <a ui-sref="tabsPlaneacion.planInformaciNGeneral" class="button button-calm   icon-left ion-plus">Planear viaje</a>
+        <div class="button-bar">
+            <a ui-sref="mochiApp.inicio" class="button button-stable button-block ">Actual</a>
+            <a href="#/planned" class="button button-stable button-block ">Planeados</a>
+            <a href="#/sugeridos" class="button button-stable button-block ">Sugeridos</a>
+            <button class="button button-dark button-block ">Realizados</button>
+        </div>
+        <ion-list></ion-list>
+        <ion-list></ion-list>
+        <ion-list></ion-list>
+        <ion-list></ion-list>
+        <div class="list card">
+            <div class="item item-divider">Boyacá</div>
+            <div class="item item-body">
+                <a style="display:inline-block;" ui-sref="tabsPlaneacion.planListaDeDAs">
+                    <div style="text-align:center;">
+                        <img src="img/o5YiCBf3SRqIyRxpKYo4_boyaca.jpg" width="100%" height="auto">
+                    </div>
+                </a>
+                <ion-list></ion-list>
+                <div>
+                    <div>
+                        <p>
+                            Enero 2016
+                        </p>
+                        <span>
+                            3 Días
+                        </span>|
+                        <span>
+                            5 Actividades
+                        </span>|
+                        <span>
+                            $800.000
+                        </span>
+                    </div>
+                </div>
+                <div class="button-bar">
+                    <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-dark button-block ">Diario</a>
+                    <a ui-sref="recordarViaje" class="button button-royal button-block ">Recordar</a>
+                    <button class="button button-energized button-block ">Publicar</button>
+                </div>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">San antero</div>
+            <div class="item item-body">
+                <a style="display:inline-block;" ui-sref="tabsPlaneacion.planListaDeDAs">
+                    <div style="text-align:center;">
+                        <img src="img/94lNg7qQlmLUtVv8skGG_san antero.jpg" width="100%" height="auto">
+                    </div>
+                </a>
+                <ion-list></ion-list>
+                <div>
+                    <div>
+                        <p>
+                            Enero 2015
+                        </p>
+                        <span>
+                            3 Días
+                        </span>|
+                        <span>
+                            8 Actividades
+                        </span>|
+                        <span>
+                            $600.000
+                        </span>
+                    </div>
+                </div>
+                <div class="button-bar"></div>
+                <div class="button-bar">
+                    <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-stable button-block ">Diario</a>
+                    <a ui-sref="recordarViaje" class="button button-stable button-block ">Recordar</a>
+                    <button class="button button-stable button-block ">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

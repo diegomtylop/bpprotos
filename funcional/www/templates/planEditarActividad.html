@@ -1,0 +1,45 @@
+<ion-view title="Plan - Editar actividad">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h2>Desayuno</h2>
+        <div>
+            <p>Este sería el nombre de la actividad y se ingresarían los detalles, los cuales son opcionales</p>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Detalles actividad</div>
+            <div class="item item-body">
+                <form class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Valor</span>
+                        <input type="text" placeholder="">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Duración</span>
+                        <input type="text" placeholder="">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Notas</span><textarea placeholder=""> </textarea>
+                    </label>
+                    <button class="button button-stable button-outline  icon-left ion-location button-full">Ubicación</button>
+                    <ion-item class="item-divider">Franja del día</ion-item>
+                    <ion-radio name="franja">Mañana</ion-radio>
+                    <ion-radio name="franja">Tarde</ion-radio>
+                    <ion-radio name="franja">Noche</ion-radio>
+                    <ion-item class="item-divider">Tipo de actividad</ion-item>
+                    <ion-checkbox>Alojamiento</ion-checkbox>
+                    <ion-checkbox>Aventura</ion-checkbox>
+                    <ion-checkbox>Cultura</ion-checkbox>
+                    <ion-checkbox>Alimentación</ion-checkbox>
+                </form>
+            </div>
+        </div>
+        <form class="list">
+            <ion-item class="range range-balanced">Prioridad?
+                <input type="range" value="5" min="0" max="10">
+            </ion-item>
+            <ion-toggle toggle-class="toggle-positive">Actividad privada?</ion-toggle>
+        </form>
+        <div class="button-bar">
+            <a ui-sref="tabsPlaneacion.planActividadesDA" class="button button-calm button-block  icon-left ion-checkmark">Guardar!</a>
+        </div>
+    </ion-content>
+</ion-view>

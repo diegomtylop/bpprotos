@@ -1,0 +1,48 @@
+<ion-view title="Gral - Mis actividades">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <div>
+            <p>Pantalla en la que se listan las actividades creadas por el usuarios</p>
+        </div>
+        <div>
+            <p>Se pueden duplicar, editar, eliminar, ver cuantas veces se ha usado en algún itinerario</p>
+        </div>
+        <a ui-sref="planEditarActividad" class="button button-balanced   icon-left ion-plus">Crear actividad</a>
+        <div class="button-bar">
+            <button class="button button-positive button-block  icon-left ion-ios-person">Privadas</button>
+            <a ui-sref="mochiApp.publicActivities" class="button button-light button-block  icon-left ion-person-stalker">Públicas</a>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Buscar alojamiento</div>
+            <div class="item item-body">
+                <div>
+                    <div>
+                        <p>
+                            Realizada 5 veces
+                        </p>
+                        <strong>
+                            Tipo de actividad
+                        </strong>
+                        <div align="center">
+                            <i class="icon ionicon ion-android-bulb" style="font-size:2em"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="ion-android-walk" style="font-size:2em"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="ion-android-bus" style="font-size:2em"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-bar">
+                    <button class="button button-stable button-block ">Añadir a itinerario</button>
+                    <button class="button button-stable button-block ">Eliminar</button>
+                    <button class="button button-stable button-block ">Editar</button>
+                </div>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Armar carpa</div>
+            <div class="item item-body"></div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Noche de rumba</div>
+            <div class="item item-body"></div>
+        </div>
+    </ion-content>
+</ion-view>
