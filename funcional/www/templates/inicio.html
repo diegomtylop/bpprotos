@@ -1,0 +1,42 @@
+<ion-view title="Inicio">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <a ui-sref="tabsPlaneacion.planInformaciNGeneral" class="button button-calm   icon-left ion-plus">Planear viaje</a>
+        <div class="button-bar">
+            <button class="button button-dark button-block ">Actual</button>
+            <a ui-sref="planeados.viajes" class="button button-stable button-block ">Planeados</a>
+            <a ui-sref="sugeridos.viajes" class="button button-stable button-block ">Sugeridos</a>
+            <a ui-sref="realizados.viajes" class="button button-stable button-block ">Realizados</a>
+        </div>
+        <h2>Viaje actual</h2>
+        <div class="list card">
+            <div class="item item-divider">Mitad del mundo</div>
+            <div class="item item-body">
+                <div style="text-align:center;">
+                    <img src="img/8hd1rWDTYOnKx5YP5OF1_quito.jpg" width="100%" height="auto">
+                </div>
+                <a ui-sref="tabsViajeActual.actualDetallesDelViaje" class="button button-balanced button-block ">Continuar!</a>
+                <div>
+                    <div>
+                        <strong>Resumen</strong>
+                        <br>
+                        <span>
+                            3 días restantes
+                        </span>
+                        <br>
+                        <span>
+                            10 Actividades restantes
+                        </span>
+                        <br>
+                        <span>
+                            9 Actividades realizadas
+                        </span>
+                        <br>
+                        <span>
+                            Total gastado: $900.000
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

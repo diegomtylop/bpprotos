@@ -1,0 +1,50 @@
+<ion-view title="Detalle del día">
+    <ion-content class="has-header">
+        <div class="card">
+            <div class="item item-divider">
+                notas
+              </div>
+          <div class="item item-text-wrap item-input">
+            <textarea rows="3" ng-model="dia.notas"></textarea>
+          </div>
+        </div>
+
+        <ul class="list">
+            <div class="item item-divider">
+                Itinerario
+              </div>
+            <li class="item  item-button-right  item-icon-right">
+                <strong>08:00</strong>
+                Acomodación en el hostal
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </li>
+            <li class="item  item-button-right  item-icon-right">
+                <strong>11:00</strong>
+                Buscar lugar para almorzar
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </li>
+            <li class="item  item-button-right  item-icon-right">
+                <strong>14:00</strong>
+              Comprar viveres
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </li>
+            <li class="item  item-button-right  item-icon-right">
+                <strong>15:00</strong>
+              Tramitar pasaporte
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </li>
+            <li class="item  item-button-right  item-icon-right">
+            <li class="item  item-button-right  item-icon-right">
+                <strong>19:00</strong>
+              Noche libre
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </li>
+        </ul>
+    </ion-content>
+    <button class="btn_flotante"   ui-sref="app.activityedit">
+        <i class="icon ion-plus-round"></i>
+        </button>
+    <button class="btn_flotante"   ui-sref="app.activitysearch" style="right:82px">
+        <i class="icon ion-funnel"></i>
+        </button>
+</ion-view>

@@ -1,0 +1,93 @@
+<!--Pantalla en la que se ingresa o edita la información de una actividad-->
+<ion-view class="has-header" view-title="Buscar actividades">
+    <ion-content>
+    <div class="has-header">
+        
+        <div class="item item-divider">
+        Opción 1
+        </div>
+        <ul class="list">
+        <li ng-repeat="actividad in actividades" style="margin-bottom:30px;border-bottom:#f4f4f4 2px solid" class="">
+            
+            <div style="width:100%;height:10em;background-image:url('{{actividad.imagen}}');background-position: center;background-repeat: no-repeat;background-size: cover;">
+            </div>
+            
+            <div>
+                <strong>
+                {{actividad.nombre}}
+                </strong>
+                <p>{{actividad.descripcion}}</p>
+                <p ng-show="actividad.costo">{{actividad.costo}}</p>
+                <p ng-hide="actividad.costo">Sin costo</p>
+                
+                <!--Tipo de actividad-->
+                <div style="text-align:center;color:#aca4a4" class="">
+                    <i class="icon {{tipo.icon}}" ng-repeat="tipo in actividad.tipos" style="font-size: 2em;"></i>
+                    <span style="float:right"> <i class="icon ion-location"></i> 5.000 </span>
+                </div>
+                
+                <div style="text-align:center;color:#aca4a4" class="">
+                   <button class="button button-outline  button-balanced">
+                       <i class="icon ion-plus"></i>
+                      Agregar
+                    </button>
+                    <button class="button button-outline   button-royal">
+                        <i class="icon ion-information-circled"></i>
+                      Detalles
+                    </button>
+                </div>
+            </div>
+            
+        </li>
+        </ul>
+        
+        
+        <div class="item item-divider">
+        Opción 2
+        </div>
+        <ul class="list">
+        <li ng-repeat="actividad in actividades" class="item item-thumbnail-right">
+            <img ng-src="{{actividad.imagen}}" align="center"/>
+            <h2>
+            {{actividad.nombre}}
+            </h2>
+            <p ng-show="actividad.costo">{{actividad.costo}}</p>
+                <p ng-hide="actividad.costo">Sin costo</p>
+               <button class="button button-clear  button-balanced">
+                   <i class="icon ion-plus"></i>
+                  Agregar
+                </button>
+                <button class="button button-clear   button-royal">
+                    <i class="icon ion-information-circled"></i>
+                  Detalles
+                </button>
+        </li>
+        </ul>
+        
+        <div class="item item-divider">
+        Opción 3
+        </div>
+        <ul class="list">
+        <li ng-repeat="actividad in actividades" class="item item-thumbnail-left">
+            <img ng-src="{{actividad.imagen}}" align="center"/>
+            <h2>
+            {{actividad.nombre}}
+            </h2>
+            <span class="item-note" ng-show="actividad.costo">{{actividad.costo}}</span>
+            <span class="item-note" ng-hide="actividad.costo">Sin costo</span>
+             <button class="button button-small button-balanced">
+               <i class="icon ion-plus"></i>
+              Agregar
+            </button>
+            <button class="button  button-small button-royal">
+                <i class="icon ion-information-circled"></i>
+              Detalles
+            </button>
+        </li>
+        </ul>
+        
+        
+    </div>
+    </ion-content>
+</div>
+</ion-view>

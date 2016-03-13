@@ -1,12 +1,6 @@
 <ion-view view-title="Nuevo itinerario">
     
-<ion-nav-back-button>
-  </ion-nav-back-button>
-  <ion-nav-buttons side="right">
-    <button ng-click="saveItinerario();" class="button">Guardar</button>
-  </ion-nav-buttons>
-    
-    
+
   <ion-content>
       <form ng-submit="saveItinerario(itinerario)">
         <label class="item item-input">
@@ -54,8 +48,10 @@
             <span class="input-label">¿Añadir ubicación?</span>
             <button ui-sref="app.mapa" class="button icon-left ion-location">Mapa</button>
         </label>
-          
-          <button type="submit" class="button button-block button-positive">Guardar itinerario</button>
+        <div class="button-gruop">
+          <button type="button" ui-sref="app.activityList" class="button button-block button-positive">Guardar itinerario</button>
+          <button type="submit" class="button button-block button-assertive">Guardar itinerario 2</button>
+        </div>
       </form>
   </ion-content>
 </ion-view>

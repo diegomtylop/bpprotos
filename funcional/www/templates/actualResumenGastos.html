@@ -1,0 +1,31 @@
+<ion-view title="Actual - Resumen Gastos">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <a ui-sref="mochiApp.inicio" class="button   button-small icon-left ion-android-arrow-back">Volver a mis viajes</a>
+        <div class="list card">
+            <div class="item item-divider">Resumen</div>
+            <div class="item item-body">
+                <div>
+                    <div>
+                        <p>Gastos totales: $80.000</p>
+                        <p>Presupuesto planeado: $120.000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ui-sref="actualNuevoGasto" class="button button-balanced   icon-left ion-android-add">Registrar gasto</a>
+        <div class="button-bar">
+            <button class="button button-stable button-block ">&lt;</button>
+            <button class="button button-positive button-block ">Hoy</button>
+            <button class="button button-stable button-block ">&gt;</button>
+        </div>
+        <ion-list>
+            <ion-item ui-sref="actualNuevoGasto">Gasolina: $50.000</ion-item>
+            <ion-item ui-sref="actualNuevoGasto">Peajes: $35.000</ion-item>
+            <ion-item ui-sref="actualNuevoGasto">Desayuno: $5.000</ion-item>
+            <ion-item ui-sref="actualNuevoGasto">Amulerzo: $8.000</ion-item>
+            <ion-item ui-sref="actualNuevoGasto">Alojamiento: 20000</ion-item>
+            <ion-item ui-sref="actualNuevoGasto">Entrada al museo: 8000</ion-item>
+            <ion-item ui-sref="actualNuevoGasto">Cena:</ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

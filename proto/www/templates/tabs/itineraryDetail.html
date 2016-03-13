@@ -1,0 +1,81 @@
+<ion-view title="<NOMBRE ITINERARIO>">
+    <ion-content>
+        <div style="width:100%;height:10em;background-image:url('{{itinerario.cover}}');background-position: center;background-repeat: no-repeat;background-size: cover;">
+        </div>
+       <h2>{{itinerario.nombre}}</h2>
+        <strong>Costo presupuestado:</strong><span>{{itinerario.costo}}</span>
+        <h1>{{activeTab}}</h1>
+        <div style="position:relative;top: -44px;">
+            <div class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
+                <div class="tabs">
+                  <a class="tab-item" 
+                     ng-class="{ 'active':(activeTab === 0) }"
+                     ng-click="mostrarTab(0)">
+                    Días
+                  </a>
+                  <a class="tab-item" ng-click="mostrarTab(1)" 
+                     ng-class="{ 'active':(activeTab === 1) }">
+                    Costos
+                  </a>
+                  <a class="tab-item" ng-click="mostrarTab(2)"
+                     ng-class="{ 'active':(activeTab === 2) }">
+                    Comentarios
+                  </a>
+                    <a class="tab-item" ng-click="mostrarTab(3)"
+                       ng-class="{ 'active':(activeTab === 3) }">
+                    Geografía
+                  </a>
+                    <a class="tab-item" ng-click="mostrarTab(4)"
+                       ng-class="{ 'active':(activeTab === 4) }">
+                    Recomendaciones
+                  </a>
+                </div>
+                
+            </div><!--.tabs-stripped-->
+            
+            
+        </div><!--Conenedor tabs-->
+        <!--Contenido de cada tab-->
+        <div style="position:relative;top: 50px;">
+            
+            <div class="has-header has-subheader has-tabs-top" style="color:red">
+                <div id="dia" ng-show="activeTab === 0">
+                    <div class="list">
+                        <div class="item">
+                            Día 1
+                        </div>
+                        <div class="item">
+                            Día 2
+                        </div>
+                        <div class="item">
+                            Día 3
+                        </div>
+                        <div class="item">
+                            Día 4
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="coso" ng-show="activeTab === 1">
+                    Costo
+                </div>
+                
+                <div id="com" ng-show="activeTab === 2">
+                    Comentarios
+                </div>
+                
+                <div id="geo" ng-show="activeTab === 3">
+                    Geografía
+                </div>
+                
+                <div id="rec" ng-show="activeTab === 4">
+                    Recomendciones
+                </div>
+            </div>
+        </div>
+        <!--ui-sref="app.activityedit"-->
+        <button class="btn_flotante"   ng-click="editarItinerario(itinerario)">
+            <i class="icon ion-edit"></i>
+        </button>
+    </ion-content>
+</ion-view>

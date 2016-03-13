@@ -1,19 +1,33 @@
 <ion-view view-title="¿Que desea hacer?">
   <ion-content class="center">
-    <div class="row row-center"  style="margin-top:25%">
-            <div class="col">
-                <a class="button button-block button-energized icon-right ion-earth" href="#/app/create">
-                Planear un viaje.
-                </a>
-            </div>
+      <div class="list"  style="margin-top:35%">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Buscar">
+        </label>
+      </div>
+    <div class="row row-center"  style="margin-top:10%">
+        <div class="col">
+            <a class="button button-block button-energized icon-right ion-earth" href="#/app/create">
+            Planear un viaje.
+            </a>
         </div>
+    </div>
     <div class="row row-center" style="margin-top:10%">
             <div class="col">
             
-                <a class="button button-block icon-right ion-search" onclick="alert('Pendiente implementar');return false;">
+                <a class="button button-block icon-right ion-search"  href="#/explore/list">
                 Explorar
                 </a>
             </div>
         </div>
+      <h2>Lista de itinerarios</h2>
+      <div class="list">
+          <a class="item item-icon-right" ng-repeat="itinerario in itinerarios"
+             href="#/explore/itinerarydetail/{{itinerario.id}}">
+              {{itinerario.nombre}}
+              <i class="icon ion-chevron-right"></i>
+          </a>
+      </div>
   </ion-content>
 </ion-view>

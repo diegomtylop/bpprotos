@@ -1,0 +1,50 @@
+<ion-view title="Gral - Mis actividades (públicas)">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <div>
+            <p>Pantalla en la que se listan las actividades creadas por el usuarios de manera pública</p>
+        </div>
+        <div>
+            <p>Se pueden duplicar, editar, eliminar, ver calificación, ver cuantas personas les ha resultado útil, cuantas veces se ha usado en algún itinerario</p>
+        </div>
+        <a ui-sref="planEditarActividad" class="button button-balanced   icon-left ion-android-add">Crear actividad</a>
+        <div class="button-bar">
+            <a ui-sref="mochiApp.gralMisActividades" class="button button-light button-block  icon-left ion-ios-person">Privadas</a>
+            <button class="button button-positive button-block  icon-left ion-person-stalker">Públicas</button>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Catedral de sal de Zipaquirá</div>
+            <div class="item item-body">
+                <div>
+                    <div>
+                        <p>
+                            Realizada 1560 veces
+                        </p>
+                        <p>
+                            Añadida a 1320 Itinerarios
+                        </p>
+                        <strong>
+                            Tipo de actividad
+                        </strong>
+                        <div align="center">
+                            <i class="icon ionicon ion-android-bulb" style="font-size:2em"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="ion-android-walk" style="font-size:2em"></i>&nbsp;&nbsp;&nbsp;
+                            <i class="ion-android-bus" style="font-size:2em"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-bar">
+                    <button class="button button-stable button-block ">Eliminar</button>
+                    <button class="button button-stable button-block ">Editar</button>
+                </div>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Posos azules</div>
+            <div class="item item-body"></div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Volcán cotopaxi</div>
+            <div class="item item-body"></div>
+        </div>
+    </ion-content>
+</ion-view>

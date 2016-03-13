@@ -1,0 +1,110 @@
+<ion-view view-title="{{itinerario.nombre}}">
+    <ion-content class="center">
+        <div class="item item-divider">
+            Opción 1
+        </div>
+        <ul class="cont-dias list">
+            <li title="Dia {{dia.id}}" ng-repeat="dia in dias" class="dia row center item">
+                
+                <div class="dia-act col col-center">
+                    4 Actividades
+                </div>
+                <div class="col">
+                    <a href="#/app/daysdetail">
+                        <div class="dia-id">
+                    {{dia.id}}
+                    </div>
+                        </a>
+                </div>
+                <div class="dia-costo col col-center">
+                    $20.000
+                </div>
+            </li>
+        </ul>
+        
+        <div class="item item-divider">
+            Opción 2
+        </div>
+        
+        <div class="list" ng-repeat="dia in dias">
+            <a class="item  item-icon-left" href="#/app/daysdetail">
+                <i class="icon ion-calendar"></i>
+                
+                <h2>{{dia.nombre}}</h2>
+                
+                <span class="item-note">
+                  4 Actividades
+                </span>
+                
+                <h3>Costo estimado: $20.000</h3>
+                
+                
+            </a>
+        </div>
+        
+        <div class="item item-divider">
+        Opción 3
+        </div>
+        
+        <div class="list" ng-repeat="dia in dias">
+            <a class="item  item-icon-left" href="#/app/daysdetail"> 
+                <i class="icon">{{$index+1}}</i>
+                
+                <h2>{{dia.nombre}}</h2>
+                
+                <span class="badge badge-calm">
+                  $40.000.00
+                </span>
+                
+                <p>4 Actividades</p>
+                
+                
+            </a>
+        </div>
+        
+        <div class="item item-divider">
+        Opción 4
+        </div>
+        
+        <div class="list" ng-repeat="dia in dias">
+            <a class="item item-thumbnail-left" href="#/app/daysdetail"> 
+                
+                <img ng-src="{{dia.cover}}"/>
+                <h2>{{dia.nombre}}</h2>
+                
+                <span class="badge badge-calm">
+                  $40.000.00
+                </span>
+                
+                <p>4 Actividades</p>
+                
+                
+            </a>
+        </div>
+        
+        <div class="item item-divider">
+        Opción 5
+        </div>
+        
+        <div class="list" ng-repeat="dia in dias">
+            <a class="item item-thumbnail-top" href="#/app/daysdetail"> 
+                
+                <img ng-src="{{dia.cover}}" style="width:100%"/>
+                <h2>{{dia.nombre}}</h2>
+                
+                
+                
+                <p>4 Actividades</p>
+                <span>$40.000</span>
+                
+                
+            </a>
+        </div>
+        
+    
+    </ion-content>
+    <!--ui-sref="app.activityedit"-->
+    <button class="btn_flotante"   >
+        <i class="icon ion-paper-airplane"></i>
+        </button>
+</ion-view>

@@ -1,5 +1,18 @@
-<ion-view view-title="Browse">
-  <ion-content>
-    <h1>Browse</h1>
-  </ion-content>
-</ion-view>
+<ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    
+        <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-home" ui-sref="app.begin">
+        </button>
+      </ion-nav-buttons>
+
+</ion-nav-bar>
+<ion-tabs class="tabs-icon tabs-positive">
+    <ion-tab title="Home" icon="ion-home"   href="#/explore/list">
+        <ion-nav-view name="explore-left"></ion-nav-view>  
+    </ion-tab>
+    <ion-tab title="Sugerencias" icon="ion-search" href="#/explore/sug">
+        <ion-nav-view name="explore-right"></ion-nav-view>  
+    </ion-tab>
+  </ion-tabs>

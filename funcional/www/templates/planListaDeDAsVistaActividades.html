@@ -1,0 +1,49 @@
+<ion-view title="Plan - Lista de días (vista actividades)">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <a ui-sref="mochiApp.inicio" class="button button-stable  button-small icon-left ion-chevron-left">Volver a mis viajes</a>
+        <ion-list></ion-list>
+        <div class="button-bar">
+            <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-light button-block ">Días</a>
+            <button class="button button-positive button-block ">Actividades</button>
+            <a ui-sref="tabsPlaneacion.planListaDeDAsVistaLugares" class="button button-light button-block ">Lugares</a>
+        </div>
+        <div>
+            <p>Esta pantalla se muestran las actividades planeadas hasta el momento, agrupadas por día</p>
+        </div>
+        <ion-list>
+            <ion-item class="item-divider">1 - Viaje a turbo</ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Salida terminal</h2>
+                <p>12:00 am</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Negociar transporte en lancha</h2>
+                <p>Notas úties en cuanto a cada actividad</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
+                <img>
+                <h2>Alojamiento en las cabañas</h2>
+                <p>Notas úties en cuanto a cada actividad</p>
+            </ion-item>
+        </ion-list>
+        <div class="list card">
+            <div class="item item-divider">2- Lancha Zapsurro</div>
+            <div class="item item-body">
+                <ion-list>
+                    <ion-item class="item-thumbnail-left">
+                        <img>
+                        <h2>Tomar lancha</h2>
+                        <p>El valor de la lancha está entre $XXX y $YYYY</p>
+                    </ion-item>
+                    <ion-item class="item-thumbnail-left">
+                        <img>
+                        <h2>Amuerzo</h2>
+                        <p>El valor de la lancha está entre $XXX y $YYYY</p>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

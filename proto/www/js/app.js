@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers','itinerary.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -35,34 +35,79 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'menuContent': {
         templateUrl: "templates/create.html",
-          controller: 'AppCtrl'
+          controller: 'ItineraryCtrl'
       }
     }
   })
-
-  .state('app.browse', {
-    url: "/browse",
+  
+  // setup an abstract state for the tabs directive
+  .state('explore', {
+    url: "/explore",
+    abstract: true,
+    templateUrl: "templates/browse.html"
+  })
+  // Each tab has its own nav history stack:
+  //Pestaña con la lista de itinerarios
+  .state('explore.list', {
+    url: '/list',
     views: {
-      'menuContent': {
-        templateUrl: "templates/browse.html"
+      'explore-left': {
+        templateUrl: "templates/tabs/itineraryList.html",
+          controller:'ItineraryCtrl'
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
+  
+  .state('explore.itinerarydetail', {
+    url: '/itinerarydetail/:itId',
+    views: {
+      'explore-left': {
+        templateUrl: "templates/tabs/itineraryDetail.html",
+        controller: 'ItineraryCtrl'
       }
-    })
+    }
+  })
+  
+  
+  
+  // Pestaña de sugerencias
+  .state('explore.sug', {
+    url: '/sug',
+    views: {
+      'explore-right': {
+        templateUrl: "templates/tabs/suggestions.html",
+        controller: 'AppCtrl'
+      }
+    }
+  })
   
   .state('app.begin', {
     url: "/begin",
     views: {
       'menuContent': {
         templateUrl: "templates/selectmode.html"
+      }
+    }
+  })
+  
+  //Pantalla donde se listan los días
+  .state('app.days', {
+    url: "/days",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/daysList.html",
+          controller: 'AppCtrl'
+      }
+    }
+  })
+  
+  //Pantalla donde se listan los días
+  .state('app.dayDeail', {
+    url: "/daysdetail",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/dayDetail.html",
+          controller: 'AppCtrl'
       }
     }
   })
@@ -85,6 +130,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       'menuContent': {
         templateUrl: "templates/activityEdit.html",
           controller: 'AppCtrl'
+      }
+    }
+  })
+  //Pantalla para crear una actividad
+  .state('app.activitysearch', {
+    url: "/activitysearch",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/activitySearch.html",
+          controller: 'ActivityCtrl'
       }
     }
   })

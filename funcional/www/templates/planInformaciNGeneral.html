@@ -1,0 +1,39 @@
+<ion-view title="Plan - Información general">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label">Nombre del viaje:</span>
+                <input type="email" placeholder="nombre">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Duración</span>
+                <input type="text" placeholder="días">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Descripción</span><textarea placeholder="Razones por las que este viaje será increíble"> </textarea>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Presupuesto planeado</span>
+                <input type="number" placeholder="$0.00">
+            </label>
+            <button class="button button-stable   icon-left ion-android-map">Ubicación</button>
+            <button class="button button-stable   icon-left ion-image">Imagen de portada</button>
+        </form>
+        <form class="list">
+            <ion-item class="item-divider">Medio de transporte</ion-item>
+            <ion-radio name="transporte">Auto</ion-radio>
+            <ion-radio name="transporte">Motocicleta</ion-radio>
+            <ion-radio name="transporte">Transporte público</ion-radio>
+            <ion-radio name="transporte">Bicicleta</ion-radio>
+        </form>
+        <form class="list">
+            <ion-item class="item-divider">Tipo de actividades</ion-item>
+            <ion-checkbox>Religión</ion-checkbox>
+            <ion-checkbox>Aventura</ion-checkbox>
+            <ion-checkbox>Fiestas</ion-checkbox>
+            <ion-checkbox>Cultura</ion-checkbox>
+            <ion-checkbox>....</ion-checkbox>
+            <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-positive button-block  icon-right ion-chevron-right">Continuar con el itinerario</a>
+        </form>
+    </ion-content>
+</ion-view>
