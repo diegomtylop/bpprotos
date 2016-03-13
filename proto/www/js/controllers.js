@@ -2,16 +2,11 @@ angular.module('starter.controllers', [])
 
 
 //Controlador del itinerario y las actividades
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state,Itinerary) {
   // Form data for the login modal
   $scope.loginData = {};
     
-    $scope.itinerario = {
-        nombre:'Nombre itinerario',
-        fechaSalida:new Date(30,06,2015),
-        descripcion:'descripción ingresada desde el controlador',
-        presupuestDisponible:'100000'
-    };
+    $scope.itinerarios = Itinerary.all();
     
     $scope.actividad = {
         nombre:'Nueva actividad',
@@ -72,19 +67,10 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-    
-    // función que guarda la información general del itinerario
-  $scope.saveItinerario = function() {
-    console.log($scope.itinerario);
-      console.log('debe irse para otra parte');
-      //Redirige a la lista de actividades
-    $state.go('app.activityList');
-  };
-    
     $scope.guardarActividad = function(){
         console.log( $scope.actividad );
         $state.go('app.activityList');
-    }
+    };
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -178,6 +164,48 @@ angular.module('starter.controllers', [])
     $scope.isSelected = function(index){
         return $scope.tiposActividad[index].selected;
     }
+}).controller('ItineraryCtrl', function($scope,$state,$stateParams, Itinerary ) {
+    
+    $scope.itineraries = Itinerary.all();
+    
+    //Si es de edición o creación
+    $scope.itinerario = $stateParams.itId ? Itinerary.get($stateParams.itId):{
+        nombre:'Nombre itinerario',
+        fechaSalida:new Date(30,06,2015),
+        descripcion:'descripción ingresada desde el controlador',
+        presupuestDisponible:'100000'
+    };
+    
+    console.log('En el controller de itinerario');
+    
+     // función que guarda la información general del itinerario
+      $scope.saveItinerario = function() {
+        console.log($scope.itinerario);
+        console.log('Guarda el itinerario con el service');
+        Itinerary.add( $scope.itinerario );
+        $state.go('app.days');
+      };
+
+    
+//}).controller('ItineraryDetailCtrl', function($scope, $stateParams, $state, Itinerary ) {
+    
+    //$scope.itinerary = Itinerary.get($stateParams.itId);
+    $scope.activeTab = '1';
+    console.log('Cargando la información del itinerario');
+    console.log($scope.itinerary);
+    
+    $scope.mostrarTab = function( index ){
+        $scope.activeTab = index;
+        //alert('mostrando tab '+index);
+    };
+    
+    $scope.editarItinerario = function(aEditar){
+        debugger;
+        console.log('aEditar: '+aEditar);
+        console.log('actual: '+$scope.itinerario)
+        $scope.itinerario = aEditar;
+        $state.go('app.create');
+    };
 });
 
 

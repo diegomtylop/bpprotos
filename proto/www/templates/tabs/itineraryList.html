@@ -1,0 +1,15 @@
+<!--Pantalla que muestra la lista de itinerarios-->
+<ion-view>
+    <ion-content>
+        <h1>Itinerarios</h1>
+        <div class="list" ng-repeat="itinerario in itineraries">
+            <a class="item item-thumbnail-top"  href="#/explore/itinerarydetail/{{itinerario.id}}">  
+                <img ng-src="{{itinerario.cover}}" style="width:100%"/>
+                <h2>{{itinerario.nombre}}</h2>
+                
+                <p>{{itinerario.actividades}} Actividades</p>
+                <span>{{itinerario.costo | currency}}</span>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
