@@ -1,7 +1,5 @@
 <ion-view title="Plan - Lista de días">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <a ui-sref="mochiApp.inicio" class="button button-stable  button-small icon-left ion-chevron-left">Volver a mis viajes</a>
-        <ion-list></ion-list>
         <div class="button-bar">
             <button class="button button-positive button-block ">Días</button>
             <a ui-sref="tabsPlaneacion.planListaDeDAsVistaActividades" class="button button-light button-block ">Actividades</a>
@@ -12,7 +10,6 @@
                 <strong>Opciones para cada día:</strong>
                 Eliminar, Cambiar orden, Editar alias A cada día mostrar cuanto es el presupuesto plaeado</p>
         </div>
-        <a ui-sref="planAAdirDA" class="button button-balanced button-block  icon-left ion-android-add">Añadir día</a>
         <ion-list>
             <ion-item class="item-thumbnail-left" ui-sref="tabsPlaneacion.planActividadesDA">
                 <img>
@@ -38,6 +35,12 @@
                 <img>
                 <h2>Día 5 - Regreso</h2>
                 <p>4 Actividades</p>
+            </ion-item>
+            <ion-item class="item-thumbnail-left button-left" ui-sref="planAAdirDA">
+                <img/>
+                <button  class="button button-balanced button-block  icon-left ion-android-add">
+                        Añadir día
+                </button>
             </ion-item>
         </ion-list>
         <div class="button-bar">

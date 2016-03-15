@@ -23,6 +23,7 @@
             <ion-item class="item-divider">Medio de transporte</ion-item>
             <ion-radio name="transporte">Auto</ion-radio>
             <ion-radio name="transporte">Motocicleta</ion-radio>
+            <ion-radio name="transporte">Avión</ion-radio>
             <ion-radio name="transporte">Transporte público</ion-radio>
             <ion-radio name="transporte">Bicicleta</ion-radio>
         </form>
@@ -33,7 +34,12 @@
             <ion-checkbox>Fiestas</ion-checkbox>
             <ion-checkbox>Cultura</ion-checkbox>
             <ion-checkbox>....</ion-checkbox>
-            <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-positive button-block  icon-right ion-chevron-right">Continuar con el itinerario</a>
+            
+            
+            <div class="button-bar">
+            <a ui-sref="mochiApp.inicio" class="button button-dark button-block  icon-left ion-android-cancel">Cancelar</a>
+            <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-positive button-block  icon-right ion-chevron-right">Itinerario</a>
+        </div>
         </form>
     </ion-content>
 </ion-view>
