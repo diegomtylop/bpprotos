@@ -1,0 +1,54 @@
+<ion-view title="Gral - Editar actividad" id="page18">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <ion-item class="item-divider">Detalles de la actividad</ion-item>
+            <label class="item item-input">
+                <span class="input-label">Nombre</span>
+                <input type="text" placeholder="Nombre">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Costo</span>
+                <input type="text" placeholder="$0.00">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Duración</span>
+                <input type="text" placeholder="horas">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Notas</span><textarea placeholder=""> </textarea>
+            </label>
+        </form>
+        <button id="gralEditarActividad-button61" class="button button-light  button-block icon-left ion-location">Ubicación</button>
+        <ion-list>
+            <ion-item class="item-divider">Franja del día</ion-item>
+            <ion-radio name="franja">Mañana</ion-radio>
+            <ion-radio name="franja">Tarde</ion-radio>
+            <ion-radio name="franja">Noche</ion-radio>
+        </ion-list>
+        <form class="list"></form>
+        <ion-list>
+            <ion-item class="item-divider">Tipo de actividad</ion-item>
+        </ion-list>
+        <form class="list">
+            <ion-checkbox name="tipo_act">Alojamiento</ion-checkbox>
+            <ion-checkbox name="tipo_act">Aventura</ion-checkbox>
+            <ion-checkbox name="tipo_act">Cultura</ion-checkbox>
+            <ion-checkbox name="tipo_act">Alimentación</ion-checkbox>
+        </form>
+        <div class="spacer" style="width: 283px; height: 56px;"></div>
+        <form class="list">
+            <ion-item class="range range-positive">Prioridad
+                <input type="range" value="50" min="0" max="100">
+            </ion-item>
+        </form>
+        <form class="list">
+            <ion-toggle toggle-class="toggle-positive">Actividad privada?</ion-toggle>
+        </form>
+        <div style="margin-right:-20px;">
+            <a ui-sref="plan.planListaDeDAs" id="gralEditarActividad-button41" style="left:-10px;" class="button button-positive  button-full">Guardar (en planeación)</a>
+        </div>
+        <div style="margin-right:-20px;">
+            <a ui-sref="tabsActual.itinerario_tab2" id="gralEditarActividad-button48" style="left:-10px;" class="button button-positive  button-full">Guardar (en ejecución)</a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+<ion-view title="Inicio" id="page9">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        
+        
+        <a ui-sref="tabsActual.planInfoGral_tab6" id="inicio-button49" style="color:#3E753E;" class="button button-energized  icon-right ion-android-calendar">Planear viaje</a>
+           
+        <div class="button-bar">
+            <a class="button button-stable button-block " href="#/index">Actual</a>
+            <button class="button button-dark button-block ">Planeados</button>
+            <a class="button button-stable button-block" href="#/planned">Sugeridos</a>
+            <a  class="button button-stable button-block " href="#/planned">Realizados</a>
+        </div>
+        
+        <div class="list card">
+            <div class="item item-divider">Viaje actual</div>
+            <div class="item item-body">
+                <h2 id="inicio-heading11" style="color:#000000;font-weight:600;font-style:italic;text-align:center;">Mitad del mundo</h2>
+                <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+                    <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+                </div>
+                <a ui-sref="tabsActual.itinerario_tab2" id="inicio-button16" style="color:default;" class="button button-energized  button-block icon-right ion-android-open">Continuar viaje</a>
+                <div>
+                    <h3>Resumen</h3>
+                    <p>
+                        3 días restantes
+                        <br>10 actividades restantes
+                        <br>9 actividades realizadas
+                        <br>Total gastado: $500.00
+                        <br>Presupuesto restante: $300.000
+                        <br>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h2 id="inicio-heading6" style="color:#000000;text-align:center;">Viajes</h2>
+        <a ui-sref="viajesPlaneados" id="inicio-button17" class="button button-positive  button-block">Soñados</a>
+        <a ui-sref="viajesSugeridos" id="inicio-button18" class="button button-assertive  button-block">Sugeridos</a>
+        <a ui-sref="viajesVividos" id="inicio-button19" class="button button-calm  button-block">Vividos</a>
+        <div class="spacer" style="width: 283px; height: 39px;"></div>
+        <ion-list>
+            <ion-item class="item-divider">Viajes</ion-item>
+        </ion-list>
+        <a ui-sref="viajesPlaneados" id="inicio-button13" class="button button-positive  button-block">Soñados</a>
+        <a ui-sref="viajesSugeridos" id="inicio-button22" class="button button-assertive  button-block">Sugeridos</a>
+        <a ui-sref="viajesVividos" id="inicio-button30" class="button button-calm  button-block">Vividos</a>
+        <div class="spacer" style="width: 283px; height: 39px;"></div>
+        <div class="list card">
+            <div class="item item-divider">Viajes</div>
+            <div class="item item-body">
+                <a ui-sref="viajesPlaneados" id="inicio-button32" class="button button-positive  button-block">Soñados</a>
+                <a ui-sref="viajesSugeridos" id="inicio-button33" class="button button-assertive  button-block">Sugeridos</a>
+                <a ui-sref="viajesVividos" id="inicio-button35" class="button button-calm  button-block">Vividos</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

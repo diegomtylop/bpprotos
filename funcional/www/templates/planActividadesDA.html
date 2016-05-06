@@ -1,25 +1,18 @@
 <ion-view title="Plan - Actividades día">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <ion-list></ion-list>
-        <h1>Día 1 - Viaje a Turbo</h1>
+        <a ui-sref="tabsPlaneacion.planListaDeDAs" class="button button-stable  button-small icon-left ion-chevron-left" ng-init="dayNumber = 1">Lista de días</a>
+        <h1>Día {{dayNumber}} - Viaje a Turbo</h1>
         <form class="list">
             <label class="item item-input">
                 <span class="input-label">Notas</span><textarea placeholder=""> </textarea>
             </label>
         </form>
-        <div>
-            <div>
-                <p>
-                    Cada día podría tener la opción de ingresar las notas, y en este espacio se verían.
-                </p>
-            </div>
-            <p>UPLICAR ACTIVIDADES EN ALGÚN DÍA</p>
-        </div>
-        <div class="button-bar"></div>
         <a ui-sref="gralAAdirActividad" class="button button-balanced button-block  icon-left ion-android-add">Añadir actividad</a>
         <div class="button-bar">
-            <button class="button button-stable button-block  icon-left ion-chevron-left">previo</button>
-            <button class="button button-stable button-block  icon-right ion-chevron-right">siguiente</button>
+            <button class="button button-stable button-block  icon-left ion-chevron-left"
+                    ng-click="dayNumber= dayNumber == 1?1:dayNumber -1">previo</button>
+            <button class="button button-stable button-block  icon-right ion-chevron-right"
+                    ng-click="dayNumber= dayNumber == 10?10:dayNumber + 1">siguiente</button>
         </div>
         <ion-list>
             <ion-item class="item-divider">Mañana</ion-item>

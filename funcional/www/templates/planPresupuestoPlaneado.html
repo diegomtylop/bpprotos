@@ -31,9 +31,9 @@
                     </p>
                 </div>
             </div>
-            <ion-toggle toggle-class="toggle-positive">Alertar límite de presupuesto</ion-toggle>
-            <label class="item item-input">
-                <span class="input-label">Límite presupuesto</span>
+            <ion-toggle toggle-class="toggle-positive" ng-model="alertaPresupuesto">Alertar límite de presupuesto</ion-toggle>
+            <label class="item item-input"  ng-show="alertaPresupuesto">
+                <span class="input-label">Alertar cuando hayas gastado:</span>
                 <input type="text" placeholder="$000.00">
             </label>
             <div class="spacer" style="width: 283px; height: 32px;"></div>

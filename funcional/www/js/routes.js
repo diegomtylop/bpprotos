@@ -18,6 +18,41 @@ angular.module('app.routes', [])
       templateUrl: 'templates/mochiApp.html'
     })
       
+  .state('mochiApp.inicio', {
+      url: '/index',
+      views: {
+        'side-menu21': {
+          templateUrl: 'templates/inicio.html'
+        }
+      }
+    })
+  
+  .state('mochiApp.planeados', {
+      url: '/planned',
+      views: {
+        'side-menu21': {
+        templateUrl: 'templates/misViajesPlaneados.html'
+        }
+      }
+    })
+  
+  .state('mochiApp.sugeridos', {
+      url: '/planned',
+      views: {
+        'side-menu21': {
+        templateUrl: 'templates/misViajesSugeridos.html'
+        }
+      }
+    })
+  
+  .state('mochiApp.realizados', {
+      url: '/planned',
+      views: {
+        'side-menu21': {
+        templateUrl: 'templates/misViajesRealizados.html'
+        }
+      }
+    })
     
       
         
@@ -95,19 +130,6 @@ angular.module('app.routes', [])
       views: {
         'tab2': {
           templateUrl: 'templates/planActividadesDA.html'
-        }
-      }
-    })
-        
-      
-    
-      
-        
-    .state('mochiApp.inicio', {
-      url: '/index',
-      views: {
-        'side-menu21': {
-          templateUrl: 'templates/inicio.html'
         }
       }
     })

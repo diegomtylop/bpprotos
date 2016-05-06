@@ -1,0 +1,27 @@
+Index botón actual: {{seleccionado}}
+<div class="button-bar">
+    <a class="button button-block" 
+    ng-class="{'button-dark':seleccionado ==1 }"
+    nav-transition="android"
+    href="#/indexdirective">
+        Inicio
+    </a>
+    <a ng-class="{'button-dark':seleccionado ==2 }" 
+    class="button button-block"
+    nav-transition="android"
+    href="#/planneddirective">
+        Planeados
+    </a>
+    <a ng-class="{'button-dark':seleccionado ==3 }" 
+    class="button button-block"
+    nav-transition="android"
+    href="#/sugedirective">
+        Sugeridos
+    </a>
+    <a ng-class="{'button-dark':seleccionado ==4 }" 
+    class="button button-block"
+    nav-transition="android"
+    href="#/donedirective">
+        Vividos
+    </a>
+</div>

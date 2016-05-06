@@ -1,0 +1,6 @@
+REVISAR LA NAVEGACIÓN ENTRE #/inicio/actual y #/inicio/planeados
+Que no está actualizando la barra de navegación
+
+2016/05/04
+continuar cambiando las rutas de los tabs en la página
+/#/plan/day_activities

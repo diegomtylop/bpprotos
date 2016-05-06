@@ -1,0 +1,41 @@
+<ion-view title="Plan - info gral" id="page13">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <label class="item item-input">
+                <span class="input-label">Nombre del viaje</span>
+                <input type="text" placeholder="Nombre">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Duración</span>
+                <input type="text" placeholder="Días">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Descripción</span><textarea placeholder="Descripción"> </textarea>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Presupuesto</span>
+                <input type="text" placeholder="$0.00">
+            </label>
+        </form>
+        <button id="planInfoGral-button20" class="button button-positive  icon-left ion-location">Ubicación</button>
+        <button id="planInfoGral-button38" class="button button-positive  icon-left ion-android-image">Imagen</button>
+        <form class="list">
+            <ion-item class="item-divider">Medio de transporte</ion-item>
+            <ion-radio name="transporte">Auto</ion-radio>
+            <ion-radio name="transporte">Motocicleta</ion-radio>
+            <ion-radio name="transporte">Avión</ion-radio>
+            <ion-radio name="transporte">Transporte público</ion-radio>
+            <ion-radio name="transporte">Bicicleta</ion-radio>
+        </form>
+        <ion-list>
+            <ion-item class="item-divider">Tipo de actividades (intereses)</ion-item>
+            <ion-checkbox name="intereses">Religión</ion-checkbox>
+            <ion-checkbox name="intereses">Aventura</ion-checkbox>
+            <ion-checkbox name="intereses">Historia</ion-checkbox>
+            <ion-checkbox name="intereses">Deportes</ion-checkbox>
+        </ion-list>
+        <div class="button-bar">
+            <a ui-sref="inicio" id="planInfoGral-button21" class="button button-dark  button-block">Cancelar</a>
+        </div>
+    </ion-content>
+</ion-view>

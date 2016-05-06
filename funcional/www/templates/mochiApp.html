@@ -1,7 +1,7 @@
 <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
         <ion-nav-bar class="bar-stable">
-            <ion-nav-back-button></ion-nav-back-button>
+            
             <ion-nav-buttons side="left">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
@@ -14,17 +14,14 @@
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
-                <ion-item class="item-divider">Mis viajes</ion-item>
-                <ion-item ui-sref="mochiApp.inicio" menu-close="">Viaje actual</ion-item>
-                <ion-item ui-sref="planeados.viajes" menu-close="">Viajes planeados</ion-item>
-                <ion-item href="#/sugeridos" menu-close="">Viajes sugeridos</ion-item>
-                <ion-item href="#/realizados" menu-close="">Viajes anteriores</ion-item>
+                <ion-item ui-sref="mochiApp.inicio" menu-close="">Inicio</ion-item>
+                
                 <ion-item ui-sref="tabsPlaneacion.planInformaciNGeneral" menu-close="">Planear nuevo viaje</ion-item>
                 <ion-item class="item-divider">Actividades</ion-item>
                 <ion-item ui-sref="mochiApp.gralMisActividades" menu-close="">Mis actividades</ion-item>
                 <ion-item class="item-divider">Configuración</ion-item>
-                <ion-item ui-sref="intro" menu-close="">Salir</ion-item>
                 <ion-item ui-sref="mochiApp.miPerfL" menu-close="">Mi perfíl</ion-item>
+                <ion-item ui-sref="intro" menu-close="">Salir</ion-item>
                 
                 <ion-item class="item-divider">Prueba tabs y menu</ion-item>
                 <ion-item ui-sref="navTab.sencillo" menu-close="">Prueba</ion-item>

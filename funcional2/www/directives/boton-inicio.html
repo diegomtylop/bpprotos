@@ -1,0 +1,31 @@
+Index botón actual: {{seleccionado}}
+<a ui-sref='inicio'>
+Inicio
+</a>
+<div class="button-bar">
+    <a class="button button-block" 
+    ng-class="{'button-dark':seleccionado ==1 }"
+    nav-transition="android"
+    href="#/index">
+        Inicio
+    </a>
+    <a ng-class="{'button-dark':seleccionado ==2 }" 
+    class="button button-block"
+    nav-transition="android"
+    href="#/planned">
+        Planeados
+    </a>
+    
+    <a ng-class="{'button-dark':seleccionado ==3 }" 
+    class="button button-block"
+    nav-transition="android"
+    href="#/suggested">
+        Sugeridos
+    </a>
+    <a ng-class="{'button-dark':seleccionado ==4 }" 
+    class="button button-block"
+    nav-transition="none"
+    href="#/done">
+        Vividos
+    </a>
+</div>
