@@ -13,7 +13,7 @@ angular.module('app.controllers', [])
 })
       
 .controller('inicioCtrl', function($scope) {
-
+    $scope.nombre='NOMBRE DEL VIAJE ACTUAL';
 })
    
 .controller('viajesPlaneadosCtrl', function($scope) {
@@ -53,23 +53,23 @@ angular.module('app.controllers', [])
     };
 })
    
-.controller('planListaDeDAsCtrl', function($scope) {
+.controller('planListaDeDiasCtrl', function($scope) {
 
 })
    
-.controller('planListaDeDAsActividadesCtrl', function($scope) {
+.controller('planListaDeDiasActividadesCtrl', function($scope) {
 
 })
    
-.controller('planListaDeDAsLugaresCtrl', function($scope) {
+.controller('planListaDeDiasLugaresCtrl', function($scope) {
 
 })
    
-.controller('planActividadesDACtrl', function($scope) {
+.controller('planActividadesDiaCtrl', function($scope) {
 
 })
    
-.controller('gralAAdirActividadCtrl', function($scope) {
+.controller('gralAdicionarActividadCtrl', function($scope) {
 
 })
    

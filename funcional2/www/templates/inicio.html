@@ -1,19 +1,10 @@
 <ion-view title="Inicio" id="page9">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         
+        <!--Prueba directiva-->
+        <boton-inicio actual="1"></boton-inicio>
         
-        <a ui-sref="tabsController.planInfoGral_tab6" id="inicio-button49" style="color:#3E753E;" class="button button-energized  icon-right ion-android-calendar">Planear viaje</a>
-           
-        <div class="button-bar">
-            <a class="button button-stable button-block " href="#/nav_menu/index">Actual</a>
-            <button class="button button-dark button-block ">Planeados</button>
-            <a class="button button-stable button-block" href="#/nav_menu/planned">Sugeridos</a>
-            <a  class="button button-stable button-block " href="#/nav_menu/planned">Realizados</a>
-        </div>
         
-        aca
-        <ion-nav-view></ion-nav-view>
-        aca
         <div class="list card">
             <div class="item item-divider">Viaje actual</div>
             <div class="item item-body">
@@ -21,7 +12,7 @@
                 <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
                     <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
                 </div>
-                <a ui-sref="tabsController.itinerario_tab2" id="inicio-button16" style="color:default;" class="button button-energized  button-block icon-right ion-android-open">Continuar viaje</a>
+                <a ui-sref="tabsActual.itinerario" id="inicio-button16" style="color:default;" class="button button-energized  button-block icon-right ion-android-open">Continuar viaje</a>
                 <div>
                     <h3>Resumen</h3>
                     <p>
