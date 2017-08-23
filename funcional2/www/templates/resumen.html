@@ -1,32 +1,45 @@
 <ion-view title="Resumen" id="page2">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
+
+      <H1>{{variableGlobalDiego}}</H1>
+
         <div class="list card">
-            <div class="item item-divider">Mitad del mundo</div>
+            <div class="item item-divider">{{itinerary.name}}</div>
             <div class="item item-body">
-                <div id="resumen-markdown2" style="color:#000000;">
-                    <p>
-                        <strong>Fechas:</strong>Abr 06 - Abr 09</p>
+                <div class="item ion-item">
+                        <strong>Fechas:</strong>
+                        {{itinerary.initialDate | date : 'yyyy-MM-dd'}} - {{ common.summary.endDate | date : 'yyyy-MM-dd'}}<br/>
                 </div>
             </div>
         </div>
         <div class="list card">
             <div class="item item-divider">Actividades</div>
+
             <div class="item item-body">
-                <ion-list>
-                    <ion-item>3 días restantes</ion-item>
-                    <ion-item>9/19 actividades realizadas</ion-item>
-                </ion-list>
+                <a href="#/current/itinerary" class="item ion-item">{{common.summary.daysLeft}} días restantes</a>
+                <a href="#/current/itinerary" class="item ion-item">{{common.summary.totalActivities}} actividades</a>
             </div>
         </div>
         <div class="list card">
             <div class="item item-divider">Presupuesto</div>
             <div class="item item-body">
-                <ion-list>
-                    <ion-item>Total gastado: $900.000</ion-item>
-                    <ion-item>Planeado; $ 1'000.000</ion-item>
-                </ion-list>
+                <a href="#/current/expenses"  class="item ion-item">
+                    <strong ng-class="{assertive:budgetExceded}">
+                        Restante:
+                        {{itinerary.budget - common.summary.totalSpent | currency }}
+                        <i class="icon ion-alert-circled" ng-show="budgetExceded"></i>
+                    </strong>
+                </a>
+                <a href="#/current/expenses"
+                   class="item ion-item">
+                    Total gastado:
+                    {{common.summary.totalSpent | currency }}
+                </a>
+                <a href="#/current/expenses"
+                   class="item ion-item">
+                    Planeado: {{itinerary.budget | currency}}
+                </a>
             </div>
         </div>
-        <ion-list></ion-list>
     </ion-content>
 </ion-view>

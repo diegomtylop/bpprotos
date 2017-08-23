@@ -1,30 +1,26 @@
-Index botón actual: {{seleccionado}}
-<a ui-sref='inicio'>
-Inicio
-</a>
 <div class="button-bar">
     <a class="button button-block" 
     ng-class="{'button-dark':seleccionado ==1 }"
-    nav-transition="android"
+    menu-close="" 
     href="#/index">
-        Inicio
+        Actual
     </a>
     <a ng-class="{'button-dark':seleccionado ==2 }" 
     class="button button-block"
-    nav-transition="android"
+    menu-close="" 
     href="#/planned">
         Planeados
     </a>
     
     <a ng-class="{'button-dark':seleccionado ==3 }" 
     class="button button-block"
-    nav-transition="android"
+    menu-close="" 
     href="#/suggested">
         Sugeridos
     </a>
     <a ng-class="{'button-dark':seleccionado ==4 }" 
     class="button button-block"
-    nav-transition="none"
+    menu-close="" 
     href="#/done">
         Vividos
     </a>

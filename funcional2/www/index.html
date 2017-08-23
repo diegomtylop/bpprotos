@@ -6,6 +6,7 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -16,42 +17,104 @@
     -->
 
     <script src="js/app.js"></script>
+    <!--Controllers-->
     <script src="js/controllers.js"></script>
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/IndexCtrl.js"></script>
+    <script src="js/controllers/InicioCtrl.js"></script>
+    <script src="js/controllers/InicioPlanCtrl.js"></script>
+    <script src="js/controllers/InicioDoneCtrl.js"></script>
+    <script src="js/controllers/IntroCtrl.js"></script>
+    <script src="js/controllers/ItinerarioCtrl.js"></script>
+    <script src="js/controllers/ExpensesCtrl.js"></script>
+    <script src="js/controllers/PlanDeGastosCtrl.js"></script>
+    <script src="js/controllers/PlanInfoGralCtrl.js"></script>
+    <script src="js/controllers/SettingsCtrl.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+
     <script src="js/routes.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/services/ItineraryService.js"></script>
+    <script src="js/services/SettingsService.js"></script>
+    <script src="js/services/IndexedDBService.js"></script>
+    <script src="js/services/CacheService.js"></script>
+
+
+
     <script src="js/directives.js"></script>
 
-    
+
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
-    
+
 
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
-  <div>
-    <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">
+  <div ng-controller="MainController">
+    <ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu">
         <ion-side-menu-content>
             <ion-nav-bar class="bar-stable">
-                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-back-button nav-transition="none">
+                <i class="ion-arrow-left-c"></i> Volver
+                </ion-nav-back-button>
+
                 <ion-nav-buttons side="left">
-                    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                    <button class="button button-icon button-clear ion-navicon"
+                    menu-toggle="left"></button>
                 </ion-nav-buttons>
+
+                <!--
+                <ion-nav-buttons side="right">
+                    <button class="button ion-chevron-left"
+                    ui-sref="planned"
+                    ng-click="alert('cosa')">
+                    Planeados
+                    </button>
+                </ion-nav-buttons>-->
+
             </ion-nav-bar>
+
+            <!--Cada una de las vistas que comparten esta plantilla-->
             <ion-nav-view></ion-nav-view>
         </ion-side-menu-content>
-        <ion-side-menu side="left" id="side-menu21">
+        <ion-side-menu side="left" id="side-menu">
             <ion-header-bar class="bar-stable">
                 <div class="title">Menu</div>
             </ion-header-bar>
             <ion-content padding="false" class="side-menu-left has-header">
-                <ion-list data-componentid="list7">
-                    <ion-item ui-sref="inicio" menu-close="" data-componentid="list-item17">Inicio</ion-item>
-                    <ion-item ui-sref="plan.planInfoGral" menu-close="" data-componentid="list-item20">Planear nuevo viaje</ion-item>
-                    <ion-item ui-sref="tabsActual.resumen" menu-close="" data-componentid="list-item21">Viaje actual</ion-item>
-                    <ion-item class="item-divider" data-componentid="list-item-divider15">Actividades</ion-item>
-                    <ion-item ui-sref="gralMisActividades" menu-close="" data-componentid="list-item23">Mis actividades</ion-item>
-                    <ion-item class="item-divider" data-componentid="list-item-divider16">Configuración</ion-item>
-                    <ion-item data-componentid="list-item18">Mi perfíl</ion-item>
-                    <ion-item data-componentid="list-item19">Salir</ion-item>
+                <ion-list>
+                    <ion-item ui-sref="inicio" menu-close="">
+                        <i class="ion-home"></i>
+                        Inicio
+                    </ion-item>
+                    <ion-item ui-sref="inicio" menu-close="">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Actual
+                    </ion-item>
+                    <ion-item ui-sref="planned" menu-close="">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Planeados
+                    </ion-item>
+                    <ion-item ui-sref="suggested" menu-close="">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Sugeridos
+                    </ion-item>
+                    <ion-item ui-sref="done" menu-close="">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        Vividos
+                    </ion-item>
+
+                    <a href="#/plan/plan_general_info?new_it" class="item" menu-close="">
+                        <i class="ion-android-calendar"></i>
+                        Planear viaje nuevo
+                    </a>
+                    <ion-item ui-sref="tabsActual.resumen" menu-close="" ng-show="travelInProgress">
+                        Viaje actual</ion-item>
+                    <ion-item class="item-divider">Actividades</ion-item>
+                    <ion-item ui-sref="gralMisActividades" menu-close="" >Mis actividades</ion-item>
+                    <ion-item class="item-divider">Configuración</ion-item>
+                    <ion-item ui-sref="settings" menu-close="">Mi perfíl</ion-item>
+                    <ion-item>Salir</ion-item>
+                    <ion-item ui-sref="intro" menu-close="" >Intro</ion-item>
                 </ion-list>
             </ion-content>
         </ion-side-menu>

@@ -1,26 +1,109 @@
-<ion-view title="Gastos" id="page4">
+<ion-view title="Gastos">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <H1>{{variableGlobalDiego}}</H1>
+
+
         <div class="list card">
             <div class="item item-divider">Resumen</div>
-            <div class="item item-body">
-                <div id="gastos-markdown4" style="color:#000000;">
-                    <p>Gastos totales: $80.000</p>
 
-                    <p>Presupuesto planeado: $120.000</p>
-                </div>
+            <div class="item item-button-right">
+                Presupuesto planeado: {{itinerary.budget | currency}}
+                <button class="button button-outline button-assertive" ng-click="editBudget()">
+                    <i class="icon ion-edit icon small"></i>
+                </button>
+            </div>
+
+            <div class="item item-button-right">
+                Gastos totales:  {{common.summary.totalSpent | currency }}
+            </div>
+
+            <div class="item item-button-right">
+                <strong ng-class="{assertive:budgetExceded}">
+                    Presupuesto restante: ${{itinerary.budget - common.summary.totalSpent | number}}
+                </strong>
             </div>
         </div>
-        <button id="gastos-button9" class="button button-balanced  icon ion-android-add">Registrar gasto</button>
+
         <div class="button-bar">
-            <button id="gastos-button10" class="button button-stable  button-block">&lt;</button>
-            <button id="gastos-button11" class="button button-positive  button-block">Hoy</button>
-            <button id="gastos-button12" class="button button-stable  button-block">&gt;</button>
+          <a class="button button-assertive"
+            ng-class="{'button-outline':othTabActive}"
+
+           ng-click="setActiveTab('ACT')">Actividades</a>
+
+          <a class="button button-assertive"
+          ng-class="{'button-outline':actTabActive}"
+
+            ng-click="setActiveTab('OTH')">Otros gastos</a>
         </div>
-        <ion-list></ion-list>
-        <ion-list>
-            <ion-item>Gasolina: $50.000</ion-item>
-            <ion-item>Almuerzo: $12.000</ion-item>
-            <ion-item>Entrada mina: $22.000</ion-item>
-        </ion-list>
+
+        <!--Activities expenses-->
+        <div class="card" ng-show="actTabActive">
+          <div class="button-bar">
+              <button  ng-click="previousDay()" class="button button-outline button-stable  button-block">&lt;</button>
+              <button class="button button-positive  button-block">Día {{currentDayIndex+1}}</button>
+              <button  ng-click="nextDay()" class="button button-outline button-stable  button-block">&gt;</button>
+          </div>
+          <h3>{{currentDate | date : 'yyyy-MM-dd'}}</h3>
+          <div class="list">
+              <ion-item class="item-divider">
+                  Costo de actividades
+              </ion-item>
+              <!--TODO: HACER ESTO CON ITERADOR DE COLECCIONES DE IONIC-->
+              <div ng-repeat="activity in itinerary.days[currentDayIndex].activities track by $index">
+
+                  <a ng-if="activity.cost" class="item item-button-right"
+                  ng-click="alert('acá debería permitir editar la actividad');">
+                      <div style="width:25%;    display: inline-block;">
+                        {{activity.cost|currency}}
+                      </div>
+                      {{activity.name}}
+                  </a>
+              </div>
+          </div><!--.list card-->
+        </div><!--.card-->
+
+        <!--Otros gastos-->
+        <div class="card" ng-show="othTabActive">
+          <!--<div class="button-bar">
+            <button ng-click="registerExpense()"
+            class="button button-balanced  icon ion-android-add">Registrar gasto</button>
+          </div>-->
+
+          <div class="item item-divider">
+            Otros gastos
+          </div>
+
+          <a ng-repeat="expense in itinerary.expenses track by $index"
+                      class="item"
+                      ng-click="editExpense( $index, expense )">
+              <div style="width:25%;    display: inline-block;">
+              {{expense.cost | currency}}:
+              </div>
+               {{expense.name}}
+          </a>
+
+          <!--<div ng-repeat="expense in itinerary.expenses track by $index"
+                      class="item item-button-right">
+                {{expense.name}}: {{expense.cost}}
+
+                <div class="buttons">
+                    <a class="button button-balanced"
+                           ng-click="editExpense( $index, expense )">
+                            <i class="icon ion-edit"></i>
+                    </a>
+
+                    <a class="button button-assertive"
+                           ng-click="removeExpense( $index )">
+                            <i class="icon ion-trash-a"></i>
+                    </a>
+                </div>
+          </div>-->
+        </div>
     </ion-content>
+
+    <button ng-click="registerExpense()"
+    class="floating-button">
+      <!--<p class="plus">+</button>-->
+      <i class="icon ion-social-usd plus"></i>
+    <div >
 </ion-view>

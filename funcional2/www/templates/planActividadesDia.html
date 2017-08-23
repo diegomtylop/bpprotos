@@ -1,25 +1,78 @@
 <ion-view title="Plan - Actividades día" id="page16">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <ion-list></ion-list>
-        <h2 style="color:#000000;">Día 1 - Rodada</h2>
-        <form class="list">
-            <label class="item item-input">
-                <span class="input-label">Notas</span><textarea placeholder=""> </textarea>
-            </label>
-        </form>
-        <a ui-sref="plan.gralAdicionarActividad" id="planActividadesDia-button25" class="button button-positive  button-block">Añadir actividad</a>
+        
+        <!--Boton para volver a la lista de dias-->
+        <p>
+        <button class="button button-light button-small icon-left ion-chevron-left"
+            ui-sref="plan.planListaDeDias">
+            Lista de días
+        </button>
+        </p>
+        <label class="item item-input">
+              <i class="icon ion-edit placeholder-icon"></i>
+              <input type="text" style="color:#000000;font-size:2em" 
+                placeholder="Descripción"
+               ng-model="currentDay.name"/>
+        </label>
+        
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Notas</span>
+            <textarea placeholder="Notas" rows="2"
+                    ng-model="currentDay.notes"> </textarea>
+        </label>
+        
+         <a ng-click="openModalActOpction($index)"
+            class="button button-positive  button-block">
+            <i class="icon ion-plus icon-calm"></i>
+            Añadir actividad
+        </a>
+        
         <div class="button-bar">
-            <button id="planActividadesDia-button42" class="button button-stable  button-block icon-left ion-chevron-left">Previo</button>
-            <button id="planActividadesDia-button43" class="button button-stable  button-block icon-right ion-chevron-right">Siguiente</button>
+            <button class="button button-stable  button-block icon-left ion-chevron-left"
+                    ng-click="selectDay(indexDay-1)">
+                Previo
+            </button>
+            <button class="button button-stable  button-block icon-right ion-chevron-right"
+                    ng-click="selectDay(indexDay+1)">
+                Siguiente
+            </button>
         </div>
-        <ion-list>
-            <ion-item class="item-divider">Mañana</ion-item>
+        <div class="list">
+            <!--TODO: PENDIENTE ARUPARLAS SEGÚN LA FRANJA-->
+            <div class="item item-divider">Actividades</div>
+            
+            <div class="item item-button-right" 
+               ng-click="editActivity(act)"
+               ng-repeat="act in currentDay.activities track by $index">
+                <h2>{{act.name}}</h2>
+                <p>
+                    Costo: {{act.cost| currency}}
+                </p>
+                <p>
+                    Duración: {{act.duration}} horas
+                </p>
+                <div class="buttons">
+                    <a class="button button-balanced"        
+                           ng-click="editActivity(act);$event.stopPropagation()"> 
+                            <i class="icon icon ion-edit"></i>
+                    </a>
+                    <a class="button button-assertive"        
+                           ng-click="showConfirmRemoveActivity( $index );$event.stopPropagation()"> 
+                            <i class="icon icon ion-trash-a"></i>
+                    </a>
+                </div>
+            </div>
+            
+           
+            <!--TODO: PENDIENTE DEFINIR SI SE AGRUPAN POR FRANJAS
+            <ion-item class="item-divider">Mañana - QUEMADAS</ion-item>
             <ion-item>Búsqueda de alojamiento</ion-item>
             <ion-item>Desayuno típico</ion-item>
             <ion-item class="item-divider">Tarde</ion-item>
             <ion-item>Bioparque los Ocarros</ion-item>
             <ion-item class="item-divider">Noche</ion-item>
             <ion-item>Fonda la hacienda</ion-item>
-        </ion-list>
+            -->
+        </div>
     </ion-content>
 </ion-view>

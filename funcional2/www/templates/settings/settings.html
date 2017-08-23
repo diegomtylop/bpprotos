@@ -1,0 +1,33 @@
+<ion-view title="Configuración">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list" ng-submit="saveSettings()">
+            <label class="item item-input">
+                <span class="input-label">Nombre de usuario</span>
+                <input type="text" ng-model="settings.username" placeholder="Nombre"></input>
+            </label>
+        
+            <label class="item item-toggle">
+                Permitir notificaciones
+                <label class="toggle toggle-calm">
+                <input type="checkbox" ng-model="settings.allowNotification">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+                </label>
+            </label>
+        
+            <label class="item item-toggle">
+                Omitir introducción
+                <label class="toggle toggle-calm">
+                <input type="checkbox" ng-model="settings.skipIntro">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+                </label>
+            </label>
+            <button type="submit" class="button button-block button-positive">
+                Guardar
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

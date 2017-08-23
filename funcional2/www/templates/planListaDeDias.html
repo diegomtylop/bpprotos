@@ -1,27 +1,44 @@
-<ion-view title="Plan - Lista de días" id="page14">
+<ion-view title="Plan - Lista de días">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <a ui-sref="plan.gralAdicionarActividad" id="planListaDeDias-button37" class="button button-positive  icon-left ion-android-add">Añadir día</a>
+        <a class="button button-positive icon-left ion-android-add"
+           ng-click="addDay()">
+            Añadir día
+        </a>
         <div class="button-bar">
-            <button id="planListaDeDias-button39" class="button button-positive  button-block">Días</button>
-            <a ui-sref="plan.planListaDeDiasActividades" id="planListaDeDias-button40" class="button button-stable  button-block">Actividades</a>
-            <a ui-sref="plan.planListaDeDiasLugares" id="planListaDeDias-button44" class="button button-stable  button-block">Lugares</a>
+            <button
+            class="button button-positive  button-block"
+            menu-close="">Días</button>
+            <a ui-sref="plan.planListaDeDiasActividades" 
+               class="button button-stable  button-block"
+               menu-close="">Actividades</a>
+            <a ui-sref="plan.planListaDeDiasLugares" 
+            menu-close=""
+            class="button button-stable  button-block">Lugares</a>
         </div>
-        <ion-list>
-            <ion-item class="item-thumbnail-left" ui-sref="plan.planActividadesDia">
-                <img>
-                <h2>Día 1 - Medellín - Bogotá</h2>
-                <p>2 actividades</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left" ui-sref="plan.planActividadesDia">
-                <img>
-                <h2>Día 2 - Turismo en Bogotá</h2>
-                <p>3 actividades</p>
-            </ion-item>
-            <ion-item class="item-thumbnail-left" ui-sref="plan.planActividadesDia">
-                <img>
-                <h2>Día 3 - Ombligo de Colombia</h2>
-                <p>3 actividades</p>
-            </ion-item>
-        </ion-list>
+        
+        <!--Lista de días-->
+        <div class="list">
+            <div class="item item-button-right"
+                      ng-repeat="day in itinerary.days track by $index"
+                      ui-sref="plan.planActividadesDia"
+                      ng-click="selectDay($index)">
+                <div class="item-icon-left">
+                <i class="icon">{{$index+1}}</i>
+                <h2>{{day.name}}</h2>
+                <p>{{day.activities.length}} actividades</p>
+                </div>
+                
+                <div class="buttons icon-center item-icon-center" style="bottom:0px">
+                    <a class="button button-balanced"        
+                        ng-click="selectDay( $index )"> 
+                        <i class="icon icon ion-edit"></i>
+                    </a>
+                    <a class="button button-assertive"
+                       ng-click="showConfirmRemoveDay( $index );$event.stopPropagation()"> 
+                        <i class="icon icon ion-trash-a"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </ion-content>
 </ion-view>

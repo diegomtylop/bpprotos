@@ -7,42 +7,57 @@ angular.module('app.routes', ['ionicUIRouter'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-  
+
   //Tipos de viajes
   .state('inicio', {
     url: '/index',
     templateUrl: 'templates/inicio.html',
-    controller: 'inicioCtrl'
+    controller: 'IndexCtrl'
   })
-  
+
+  //Tipos de viajes
+  .state('intro', {
+    url: '/intro',
+    templateUrl: 'templates/intro/intro.html',
+    controller: 'introCtrl'
+  })
+
+  //Tipos de viajes
+  .state('settings', {
+    url: '/settings',
+    templateUrl: 'templates/settings/settings.html',
+    controller: 'settingsCtrl'
+  })
+
   .state('planned', {
     url: '/planned',
     templateUrl: 'templates/viajesPlaneadosDirective.html',
-    controller: 'inicioCtrl'
+    controller: 'inicioPlanCtrl'
   })
-  
-  
-  
+
+
+
   .state('suggested', {
     url: '/suggested',
-    templateUrl: 'templates/viajesSugeridosDirective.html',
-    controller: 'inicioCtrl'
+    templateUrl: 'templates/viajesSugeridosDirective.html'/*,
+    controller: 'inicioCtrl'*/
   })
-  
+
   .state('done', {
     url: '/done',
     templateUrl: 'templates/viajesVividosDirective.html',
-    controller: 'inicioCtrl'
+    controller: 'inicioDoneCtrl'
   })
-    
+
   //Pestañas del viaje actual
     .state('tabsActual', {
         url: '/current',
         templateUrl: 'templates/tabsActual.html',
-        abstract:true
+        abstract:true,
+        controller: 'inicioCtrl'
       })
 
-      /* 
+      /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
     To navigate to this route, do NOT use a URL. Instead use one of the following:
       1) Using the ui-sref HTML attribute:
@@ -60,13 +75,12 @@ angular.module('app.routes', ['ionicUIRouter'])
     url: '/summary',
     views: {
       'tabSum': {
-        templateUrl: 'templates/resumen.html',
-        controller: 'resumenCtrl'
+        templateUrl: 'templates/resumen.html'
       }
     }
   })
 
-  /* 
+  /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
     To navigate to this route, do NOT use a URL. Instead use one of the following:
       1) Using the ui-sref HTML attribute:
@@ -91,7 +105,19 @@ angular.module('app.routes', ['ionicUIRouter'])
     }
   })
 
-  /* 
+  /* Se comenta porque la adición de actividades desde el itinerario actual
+  se hará con el modal
+  .state('tabsActual.addActivity', {
+    url: '/edit_activiy',
+    views: {
+      'tabIti': {
+        templateUrl: 'templates/gralEditarActividad.html',
+        controller: 'itinerarioCtrl'
+      }
+    }
+  })*/
+
+  /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
     To navigate to this route, do NOT use a URL. Instead use one of the following:
       1) Using the ui-sref HTML attribute:
@@ -109,11 +135,21 @@ angular.module('app.routes', ['ionicUIRouter'])
     views: {
       'tabExp': {
         templateUrl: 'templates/gastos.html',
-        controller: 'gastosCtrl'
+        controller: 'expensesCtrl'
       }
     }
   })
-  
+
+  /*.state('tabsActual.addExpense', {
+    url: '/add_expense',
+    views: {
+      'tabExp': {
+        templateUrl: 'templates/planNuevoGasto.html',
+        controller: 'itinerarioCtrl'
+      }
+    }
+  })*/
+
   //Pantallas generales
   .state('gralEditarActividad', {
     url: '/edit_activity',
@@ -133,63 +169,84 @@ angular.module('app.routes', ['ionicUIRouter'])
     controller: 'gralMisActividadesCtrl'
   })
 
-  
 
-  .state('planNuevoGasto', {
+
+ /* .state('planNuevoGasto', {
     url: '/new_expense',
     templateUrl: 'templates/planNuevoGasto.html',
     controller: 'planNuevoGastoCtrl'
-  })
-  
-  
+  })*/
+
+
 
   //Tabs de la planeación
   .state('plan', {
     url: '/plan',
     templateUrl: 'templates/tabsPlan.html',
-    abstract:true
+    abstract:true,
+      controller: 'planInfoGralCtrl'
   })
-  
+
   .state('plan.planInfoGral', {
     url: '/plan_general_info',
     views: {
       'tabInf': {
-        templateUrl: 'templates/planInfoGral.html',
-        controller: 'planInfoGralCtrl'
+        templateUrl: 'templates/planInfoGral.html'
       }
     }
   })
-  
+
   .state('plan.planListaDeDias', {
     url: '/plan_list_day',
     views: {
       'tabDay': {
-        templateUrl: 'templates/planListaDeDias.html',
-        controller: 'planListaDeDiasCtrl'
+        templateUrl: 'templates/planListaDeDias.html'
       }
     }
   })
-  
+
   .state('plan.gralAdicionarActividad', {
     url: '/add_Activity_options',
     views: {
       'tabDay': {
-        templateUrl: 'templates/gralAdicionarActividad.html',
-        controller: 'gralAdicionarActividadCtrl'
+        templateUrl: 'templates/gralAdicionarActividad.html'
       }
     }
   })
-  
+
+  /*Se comenta porque esta pantalla ya se maneja con pop up*/
+  /*.state('plan.editarActividad', {
+    url: '/edit_activity',
+    views: {
+      'tabDay': {
+        templateUrl: 'templates/gralEditarActividad.html'
+      }
+    }
+
+  })*/
+
   .state('plan.planPlanDeGastos', {
     url: '/plan_expenses',
     views: {
       'tabExp': {
         templateUrl: 'templates/planPlanDeGastos.html',
-        controller: 'planPlanDeGastosCtrl'
+        controller: 'planDeGastosCtrl'
       }
     }
   })
-  
+
+  /*
+  Se reemplazó por un modal en la pantalla de planes
+  .state('plan.addExpense', {
+    url: '/add_expense',
+    views: {
+      'tabExp': {
+        templateUrl: 'templates/planNuevoGasto.html',
+        controller: 'planPlanDeGastosCtrl'
+      }
+    }
+  })*/
+
   .state('plan.planListaDeDiasActividades', {
     url: '/plan_day_list_activities',
     views: {
@@ -199,8 +256,8 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
-  
-  /* 
+
+  /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
     To navigate to this route, do NOT use a URL. Instead use one of the following:
       1) Using the ui-sref HTML attribute:
@@ -224,8 +281,8 @@ angular.module('app.routes', ['ionicUIRouter'])
       }
     }
   })
-  
-  /* 
+
+  /*
     The IonicUIRouter.js UI-Router Modification is being used for this route.
     To navigate to this route, do NOT use a URL. Instead use one of the following:
       1) Using the ui-sref HTML attribute:
@@ -248,10 +305,10 @@ angular.module('app.routes', ['ionicUIRouter'])
         controller: 'planActividadesDiaCtrl'
       }
     }
-  })
+  });
 
-  
-$urlRouterProvider.otherwise('/index')
+
+//$urlRouterProvider.otherwise('/intro')
 
 
 });

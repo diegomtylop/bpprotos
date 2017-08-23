@@ -1,13 +1,55 @@
 <ion-view title="Plan - Lista de días (actividades)" id="page20">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <a ui-sref="plan.gralAdicionarActividad" id="planListaDeDiasActividades-button59" class="button button-positive  icon-left ion-android-add">Añadir actividad</a>
+        <a 
+           class="button button-positive  icon-left ion-android-add"
+           ng-click="addDay()"
+           >Añadir día</a>
         <div class="button-bar">
-            <a ui-sref="plan.planListaDeDias" id="planListaDeDiasActividades-button53" class="button button-stable  button-block">Días</a>
-            <button id="planListaDeDiasActividades-button54" class="button button-positive  button-block">Actividades</button>
-            <a ui-sref="plan.planListaDeDiasLugares" id="planListaDeDiasActividades-button55" class="button button-stable  button-block">Lugares</a>
+            <a ui-sref="plan.planListaDeDias" 
+            class="button button-stable  button-block"
+            menu-close="">Días</a>
+            <button 
+            class="button button-positive  button-block">Actividades</button>
+            <a ui-sref="plan.planListaDeDiasLugares"
+            class="button button-stable  button-block"
+            menu-close="">Lugares</a>
         </div>
+        <ion-list ng-repeat="day in itinerary.days">
+            <ion-item class="item-divider icon-leftt">{{$index+1}} - {{day.name}}</ion-item>
+            <ion-item class="item item-button-right" ng-repeat="act in day.activities"
+                   ng-click="editActivity(act)">
+                <h2>{{act.name}}</h2>
+                <p>
+                    Costo: {{act.cost| currency}}
+                </p>
+                <p>
+                    Duración: {{act.duration}} horas
+                </p>
+                <div class="buttons">
+                    <a class="button button-balanced"        
+                           ng-click="editActivity(act);$event.stopPropagation()"> 
+                            <i class="icon ion-edit"></i>
+                    </a>
+                    <a class="button button-assertive"        
+                           ng-click="selectDayActivity(day);showConfirmRemoveActivity( $index );$event.stopPropagation()"> 
+                            <i class="icon icon ion-trash-a"></i>
+                    </a>
+                </div>
+            </ion-item>
+            
+            <!--Botón para añadir nuevas actividades a un día-->            
+            <a ng-click="selectDay($index);openModalActOpction($index)"
+               class="item item-icon-right calm">
+                <i class="icon ion-plus icon-calm"></i>
+                Añadir actividad a este día
+            </a>
+            <div class="spacer" style="height: 10px;"></div>
+        </ion-list>
+        
+        <!--TODO: BORRAR ESTO ERA SOLO EJEMPLO
+        <div class="spacer" style="height: 100px;"></div>
         <ion-list>
-            <ion-item class="item-divider">Día 1 - Bogotá</ion-item>
+            <ion-item class="item-divider">Día 1 - Bogotá QUEMADO</ion-item>
             <ion-item class="item-thumbnail-left">
                 <img>
                 <h2>Llegada a Bogotá</h2>
@@ -35,5 +77,6 @@
                 <p>Tarde - $17.000</p>
             </ion-item>
         </ion-list>
+        -->
     </ion-content>
 </ion-view>

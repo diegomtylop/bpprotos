@@ -1,0 +1,45 @@
+<!--Desplegado como modal-->
+<div class="modal">
+    <ion-header-bar>
+      <h1 class="title">Detalle de la actividad</h1>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <div class="list card">
+            <div class="item item-divider">{{activity.name}}</div>
+            <div class="item item-body">
+                <div id="resumen-markdown2" style="color:#000000;">
+                    <p ng-show="activity.cost">
+                        <strong>Costo:</strong>
+                        {{activity.cost}}<br/>
+                    </p>
+                    <p ng-show="activity.duration">
+                        <strong>Duración:</strong>
+                        {{activity.duration}}<br/>
+                    </p>
+                    <p ng-show="activity.notes">
+                        <strong>Notas:</strong>
+                        {{activity.notes}}<br/>
+                    </p>
+                </div>
+            </div>
+
+            <div class="button-bar">
+              <a ng-click="modalDetail.hide()"
+              class="button button-stable ion-chevron-left">Volver</a>
+
+              <a ng-click="editSelectedActivity()"
+                class="button button-positive icon-left ion-edit">Editar</a>
+
+              <a ng-click="removeSelectedActivity()"
+                class="button button-assertive icon-left ion-trash-a">Eliminar</a>
+            </div>
+        </div>
+
+
+        <!--
+        <div style="margin-right:-20px;">
+            <a ng-click="modalDetail.hide()"
+               style="left:-10px;" class="button button-positive  button-full">Cancelar</a>
+        </div>-->
+    </ion-content>
+</div>

@@ -1,0 +1,67 @@
+<!--inicialmente en la planeación se podían ingresar gastos, pero quité esta opción para que mejor solo se puedan registrar gastos en el viaje actual-->
+<ion-view title="Plan - Presupuesto">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h2>Presupuesto</h2>
+        
+        <div>
+            <div>
+                <p>
+                    <strong>Presupuesto total por actividades</strong>
+                    <span style="float:right">{{totalCostActivities  | currency}}</span>
+                </p>
+            </div>
+            <div>
+                <div>
+                    <p>
+                        <strong>Presupuesto otros gastos planeados</strong>
+                        <span style="float:right">
+                            {{totalcostOther | currency}}
+                        </span>
+                    </p>
+                </div>
+                <hr>
+                <p style="color:green">
+                    <strong>Presupuesto total planeado</strong>
+                    <span style="float:right">
+                        {{totalCostActivities + totalcostOther |currency}}
+                    </span>
+                </p>
+            </div>
+        </div>
+        <ion-list>
+            <ion-toggle toggle-class="toggle-positive" 
+                        ng-model="itinerary.alertBudgetLimit">
+                Alertar límite de presupuesto
+            </ion-toggle>
+            <label class="item item-input" ng-show="itinerary.alertBudgetLimit">
+                <span class="input-label">Valor</span>
+                <input type="number" placeholder="" ng-model="itinerary.budgetLimit">
+            </label>
+        </ion-list>
+        
+        <a ng-click="newExpense()"
+        class="button button-positive  button-block">Nuevo gasto</a>
+        
+        <div class="list">
+            <div class="item item-divider">Otros gastos planeados</div>
+            
+            <div ng-repeat="exp in itinerary.expenses track by $index"
+                 class="item item-button-right"
+               ng-click="editExpense(exp)"
+               on-hold="alert('Sueltamwe')"
+               on-touch="alert('Tocadp')">
+                
+                {{exp.name}}
+                <span class="item-note">
+                    {{exp.cost | currency}}
+                </span>
+                <div class="buttons" >
+                    <a class="button button-assertive" ng-click="showConfirmRemoveExpense( exp );$event.stopPropagation()"> 
+                        <i class="icon icon ion-trash-a"></i>
+                    </a>
+                </div>
+            </div>
+        </ion-list>
+        
+    </ion-content>
+</ion-view>

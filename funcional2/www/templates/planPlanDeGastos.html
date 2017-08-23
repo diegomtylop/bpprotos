@@ -1,41 +1,59 @@
-<ion-view title="Plan - Plan de gastos" id="page15">
+<ion-view title="Plan - Presupuesto">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <h2 id="planPlanDeGastos-heading8" style="color:#000000;">Gastos planeados</h2>
-        <div>
+        
+        <div ng-show="itinerary.budget">
             <div>
                 <p>
-                    <strong>Total por actividades</strong>
-                    <span style="float:right">$740.000</span>
+                    <strong>Planeado</strong>
+                    <span style="float:right">{{itinerary.budget | currency}}</span>
                 </p>
             </div>
+            
             <div>
-                <div>
-                    <p>
-                        <strong>Total por otros gastos</strong>
-                        <span style="float:right">
-                            $340.000</span>
-                    </p>
-                </div>
-                <hr>
-                <p style="color:green">
-                    <strong>Total por otros gastos</strong>
-                    <span style="float:right">
-                        $1'080.000</span>
+                <p>
+                    <strong>Presupuesto total por actividades</strong>
+                    <span style="float:right">{{totalCostActivities  | currency}}</span>
                 </p>
+            </div>
+            <div class="list">
+                <ion-toggle toggle-class="toggle-positive" 
+                            ng-model="itinerary.alertBudgetLimit"
+                            ng-change="budgetToggleChanged()">
+                    Alertar límite de presupuesto
+                </ion-toggle>
+
+                <div ng-show="itinerary.alertBudgetLimit">
+                    <label class="item">
+                        <p style="white-space:normal">
+                            Alertarme cuando el presupuesto restante sea menor a:
+                        </p>
+                    </label>
+                    <label class="item item-input">
+                        <input type="TEXT" id="lbudg" ng-model="itinerary.budgetLimit"
+                               ng-blur="budgetLimitChanged()"
+                               style="max-width: 50%;"
+                               placeholder="$0.00"
+                               min="1"
+                               max="10000000"
+                               maxlength="10" size="10">
+                        <span style="max-width: 40%;">
+                        {{itinerary.budgetLimit | currency}}
+                        </span>
+                    </label>
+                </div>
             </div>
         </div>
-        <ion-list>
-            <ion-toggle toggle-class="toggle-positive">Alertar límite de presupuesto</ion-toggle>
-        </ion-list>
-        <a ui-sref="planNuevoGasto" id="planPlanDeGastos-button45" class="button button-positive  button-block">Nuevo gasto</a>
-        <ion-list>
-            <ion-item class="item-divider">Costos planeados</ion-item>
-            <ion-item>Alojamiento: $50.000</ion-item>
-            <ion-item>Transporte: $210.000</ion-item>
-            <ion-item>Alimentación: $80.000</ion-item>
-        </ion-list>
-        <div style="margin-right:-20px;">
-            <a ui-sref="inicio" id="planPlanDeGastos-button72" style="left:-10px;" class="button button-balanced  button-full">Guardar plan de viaje</a>
+        
+        <div class="list card"  ng-hide="itinerary.budget">
+            <div class="item item-divider">¡Viaje sin presupuesto!</div>
+            <div class="item item-body">
+                <strong>Para usar esta funcionalidad debes especificar el presupuesto planeado del viaje</strong>
+                
+                <a ui-sref="plan.planInfoGral"
+                   class="button button-balanced  button-block">
+                        Ingresar presupuesto
+                </a>
+            </div>
         </div>
     </ion-content>
 </ion-view>

@@ -1,54 +1,65 @@
-<ion-view title="Gral - Editar actividad" id="page18">
+<!--Desplegado como modal-->
+<div class="modal">
+    <ion-header-bar>
+      <h1 class="title">Adicionar actividad</h1>
+    </ion-header-bar>
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <form class="list">
             <ion-item class="item-divider">Detalles de la actividad</ion-item>
             <label class="item item-input">
                 <span class="input-label">Nombre</span>
-                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Nombre" ng-model="activity.name">
             </label>
             <label class="item item-input">
                 <span class="input-label">Costo</span>
-                <input type="text" placeholder="$0.00">
+                <input type="number" placeholder="$0.00"  ng-model="activity.cost">
             </label>
             <label class="item item-input">
                 <span class="input-label">Duración</span>
-                <input type="text" placeholder="horas">
+                <input type="number" placeholder="horas"  ng-model="activity.duration" maxlength="3">
             </label>
             <label class="item item-input">
-                <span class="input-label">Notas</span><textarea placeholder=""> </textarea>
+                <span class="input-label">Notas</span>
+                <textarea placeholder="Notas" ng-model="activity.notes"></textarea>
             </label>
-        </form>
-        <button id="gralEditarActividad-button61" class="button button-light  button-block icon-left ion-location">Ubicación</button>
+        <button class="button button-light  button-block icon-left ion-location">Ubicación</button>
+        <!--TODO: PENDIENTE DEFINIR SI SE GUARDA LA FRAJA DE DÍA
         <ion-list>
             <ion-item class="item-divider">Franja del día</ion-item>
             <ion-radio name="franja">Mañana</ion-radio>
             <ion-radio name="franja">Tarde</ion-radio>
             <ion-radio name="franja">Noche</ion-radio>
         </ion-list>
-        <form class="list"></form>
+        -->
+        
         <ion-list>
             <ion-item class="item-divider">Tipo de actividad</ion-item>
         </ion-list>
-        <form class="list">
+        <div class="list">
             <ion-checkbox name="tipo_act">Alojamiento</ion-checkbox>
             <ion-checkbox name="tipo_act">Aventura</ion-checkbox>
             <ion-checkbox name="tipo_act">Cultura</ion-checkbox>
             <ion-checkbox name="tipo_act">Alimentación</ion-checkbox>
-        </form>
-        <div class="spacer" style="width: 283px; height: 56px;"></div>
-        <form class="list">
+        </div>
+        <div class="spacer" style="height: 1em;"></div>
+        <div class="list">
             <ion-item class="range range-positive">Prioridad
                 <input type="range" value="50" min="0" max="100">
             </ion-item>
-        </form>
-        <form class="list">
+        </div>
+        <div class="list">
             <ion-toggle toggle-class="toggle-positive">Actividad privada?</ion-toggle>
+        </div>
+        <div style="margin-right:-20px;">
+            <a ng-click="guardarActividad()"
+               style="left:-10px;" class="button button-positive  button-full">Guardar</a>
+           
+            <button ng-click="cancelarAddActivity()"
+            style="left:-10px;" 
+            class="button button-assertive  button-full">
+                Cancelar
+            </button>
+        </div>
         </form>
-        <div style="margin-right:-20px;">
-            <a ui-sref="plan.planListaDeDias" id="gralEditarActividad-button41" style="left:-10px;" class="button button-positive  button-full">Guardar (en planeación)</a>
-        </div>
-        <div style="margin-right:-20px;">
-            <a ui-sref="tabsActual.itinerario" id="gralEditarActividad-button48" style="left:-10px;" class="button button-positive  button-full">Guardar (en ejecución)</a>
-        </div>
     </ion-content>
-</ion-view>
+</div>

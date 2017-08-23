@@ -1,0 +1,23 @@
+
+<ion-view name="Itroducción" hide-nav-bar="true">
+    <ion-content has-headr="true">
+        <ion-slides  options="options" slider="data.slider">
+            <ion-slide-page  style="background:#00796B">
+                <form>
+                <div class="box blue"><h1>Sueña</h1></div>
+                <a ng-click="skipIntro(introSkiped)" menu-close="">Saltar</a>
+                <ion-toggle ng-model="introSkiped">No volver a mostrar </ion-toggle>
+                {{introSkiped}} form
+                </form>
+            </ion-slide-page>
+            <ion-slide-page  style="background:#FF4081">
+                <div class="box yellow"><h1>Vive</h1></div>
+                <a ng-click="skipIntro()" menu-close="">Saltar</a>
+            </ion-slide-page>
+            <ion-slide-page  style="background:#303F9F">
+                <div class="box pink"><h1>Recuerda</h1></div>
+                <a ng-click="skipIntro()" menu-close="">Saltar</a>
+            </ion-slide-page>
+        </ion-slides>
+    </ion-content>
+</ion-view>

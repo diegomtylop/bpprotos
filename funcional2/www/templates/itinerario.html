@@ -1,26 +1,45 @@
-<ion-view title="Itinerario" id="page3">
+<ion-view title="Itinerario">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <h2 id="itinerario-heading5" style="color:#000000;">Abril 07</h2>
-        <div id="itinerario-markdown3" style="color:#000000;">
+        <!--<h2>itinerary.name</h2>-->
+        <!--
+        <div style="color:#000000;">
             <p>Temperatura promedio 23°C/tiempo seco</p>
-        </div>
-        <a ui-sref="gralEditarActividad" id="itinerario-button5" class="button button-balanced  icon ion-android-add">Añadir actividad</a>
+        </div>-->
+        <H1>{{variableGlobalDiego}}</H1>
+
+        <!--<a ng-click="createActivity()"
+        class="button button-balanced
+        icon ion-android-add">Añadir actividad</a>-->
+
         <div class="button-bar">
-            <button id="itinerario-button6" class="button button-stable  button-block">&lt;</button>
-            <button id="itinerario-button7" class="button button-positive  button-block">Hoy</button>
-            <button id="itinerario-button8" class="button button-stable  button-block">&gt;</button>
+            <button class="button button-stable  button-block" ng-click="previousDay()">&lt;</button>
+            <button class="button button-positive  button-block">Día {{currentDayIndex+1}}</button>
+            <button class="button button-stable  button-block" ng-click="nextDay()">&gt;</button>
         </div>
-        <ion-list>
-            <ion-item class="item-divider">Actividades en la mañana</ion-item>
-            <ion-item>Mina de sal de Nemocón</ion-item>
-            <ion-item>Rodada a Nemocón</ion-item>
-            <ion-item class="item-divider">Actividades en la tarde</ion-item>
-            <ion-item>Parque Jaime Duque</ion-item>
-        </ion-list>
+        <h3>{{currentDate | date : 'yyyy-MM-dd'}}</h3>
+        <div class="list">
+            <div class="item-divider">
+                {{itinerary.days[currentDayIndex].name}}
+            </div>
+            <!--TODO: HACER ESTO CON ITERADOR DE COLECCIONES DE IONIC-->
+            <a ng-repeat="activity in itinerary.days[currentDayIndex].activities track by $index"
+                ng-click="showActivityDetail( activity )"
+                  class="item item-button-right">
+                  {{activity.name}}
+                <!--<a class="button button-balanced"
+                       ng-click="alert('Implementar')">
+                        <i class="icon icon ion-checkmark-round"></i>
+                </a>-->
+            </a>
+            </ion-item>
+        </div>
+
         <div class="spacer" style="width: 283px; height: 44px;"></div>
-        <ion-list>
-            <ion-item class="item-divider">Actividades hechas</ion-item>
-            <ion-item>Autodromo de Tocancipá</ion-item>
-        </ion-list>
     </ion-content>
+
+    <button ng-click="createActivity()"
+    class="floating-button royal-float">
+      <!--<p class="plus">+</button>-->
+      <i class="icon ion-android-walk plus"></i>
+    </button>
 </ion-view>

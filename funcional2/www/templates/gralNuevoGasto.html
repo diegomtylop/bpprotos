@@ -1,0 +1,42 @@
+<div class="modal">
+    <ion-header-bar>
+      <h1 class="title">
+        <span ng-show="creatingExpense">Nuevo gasto</span>
+        <span ng-show="!creatingExpense">Editar gasto</span>
+      </h1>
+    </ion-header-bar>
+    <ion-content>
+        <form class="list">
+            <div class="spacer" style="height: 40px;"></div>
+            <label class="item item-input">
+                <span class="input-label">Concepto</span>
+                <input type="text" placeholder="Descripción" ng-model="currentExpense.name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Valor</span>
+                <input type="number" placeholder="0,00" ng-model="currentExpense.cost">
+            </label>
+
+            <div class="spacer" style="height: 40px;"></div>
+
+            <!--Buttons-->
+            <div class="button-bar">
+                <a class="button ion-chevron-left button-stable" ng-click="hideModalExpense()"> Volver</a>
+                  <a class="button button-balanced ion-checkmark-circled"
+                  ng-click="saveExpense()"> Guardar</a>
+                  <a class="button button-assertive ion-trash-a"
+                  ng-show="!creatingExpense"
+                  ng-click="removeExpense( indexExpense )"> Eliminar</a>
+            </div>
+
+
+
+            <div class="spacer" style="height: 40px;"></div>
+            <a ng-click="saveExpense()"
+               class="button button-positive  button-block">
+                Guardar
+            </a>
+            <a ng-click="hideModalExpense()"  class="button button-stable  button-block">Cancelar</a>
+        </form>
+    </ion-content>
+</div>

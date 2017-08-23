@@ -1,10 +1,17 @@
 <ion-view title="Plan - Lista de días (lugares)" id="page21">
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <a ui-sref="plan.gralAdicionarActividad" id="planListaDeDiasLugares-button60" class="button button-positive  icon-left ion-android-add">Añadir actividad</a>
+        <a ng-click="openModalActOpction()"
+            class="button button-positive  icon-left ion-android-add">
+            Añadir actividad
+        </a>
         <div class="button-bar">
-            <a ui-sref="plan.planListaDeDias" id="planListaDeDiasLugares-button56" class="button button-stable  button-block">Días</a>
-            <a ui-sref="plan.planListaDeDiasActividades" id="planListaDeDiasLugares-button57" class="button button-stable  button-block">Actividades</a>
-            <button id="planListaDeDiasLugares-button58" class="button button-positive  button-block">Lugares</button>
+            <a ui-sref="plan.planListaDeDias" 
+               class="button button-stable  button-block"
+               menu-close="">Días</a>
+            <a ui-sref="plan.planListaDeDiasActividades" 
+               class="button button-stable  button-block"
+               menu-close="">Actividades</a>
+            <button class="button button-positive  button-block">Lugares</button>
         </div>
         <ion-list></ion-list>
         <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">

@@ -1,7 +1,20 @@
-<ion-view title="Gral - Añadir actividad" id="page17">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <a ui-sref="gralEditarActividad" id="gralAdicionarActividad-button31" class="button button-positive  button-block">Crear actividad</a>
-        <a ui-sref="gralActividadesSugeridas" id="gralAdicionarActividad-button34" class="button button-positive  button-block">Actividades sugeridas</a>
-        <a ui-sref="gralMisActividades" id="gralAdicionarActividad-button36" class="button button-positive  button-block">Mis actividades</a>
+<div class="modal">
+    <ion-header-bar>
+      <h1 class="title">Adicionar actividad</h1>
+    </ion-header-bar>
+    <ion-content>
+        <a ng-click="hidePopup();addActivityClean()"
+           class="button button-positive  button-block">
+            Crear actividad
+        </a>
+        <a ui-sref="gralActividadesSugeridas" 
+           ng-click="hidePopup()"
+           class="button button-positive  button-block">Actividades sugeridas</a>
+        <a ui-sref="gralMisActividades" 
+           ng-click="hidePopup()"
+           class="button button-positive  button-block">Mis actividades</a>
+        
+        <a ng-click="hidePopup()"
+           class="button button-calm  button-block">Cancelar</a>
     </ion-content>
-</ion-view>
+</div>

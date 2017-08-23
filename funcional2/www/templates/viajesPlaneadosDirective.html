@@ -4,28 +4,69 @@
         <boton-inicio actual="2"></boton-inicio>
         
         
-        <a ui-sref="plan.planInfoGral" id="inicio-button49" style="color:#3E753E;" class="button button-energized  icon-right ion-android-calendar">Planear viaje</a>
         
-        <div class="list card">
-            <div class="item item-divider">Santander 2016</div>
+       
+        <a href="#/plan/plan_general_info?new_it"
+           class="button button-positive  icon-left ion-android-calendar">Planear viaje</a>
+        
+        <!--
+        <a ng-controller="planInfoGralCtrl"
+           ng-click="nuevoItinerario()"
+           style="color:#3E753E;" class="button button-energized  icon-right ion-android-calendar">Planear viaje</a>
+        
+        
+                
+        <a ui-sref="plan.planInfoGral"
+           
+           ng-click="nuevoItinerario()"
+           style="color:#3E753E;" class="button button-energized  icon-right ion-android-calendar">Planear viaje</a>
+        
+        <a ui-sref="plan.planInfoGral"
+           style="color:#3E753E;" class="button button-energized  icon-right ion-android-calendar">Planear viaje</a>-->
+        
+        <!--lista de todos los itinerarios planeados-->
+        <div class="list card" ng-repeat="itPla in planned">
+            <div class="item item-divider">{{itPla.id}} {{itPla.name}}</div>
             <div class="item item-body">
-                <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-                    <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-                </div>
-                <a ui-sref="plan.planInfoGral" id="viajesPlaneados-button14" class="button button-positive  button-block">Seguir planeando</a>
-                <a ui-sref="tabsActual.resumen" id="viajesPlaneados-button15" class="button button-balanced  button-block">Comenzar aventura</a>
+                <p>Imagen??</p>
+                <!--Le pasa como parámetro el ide lde itinerario que se desea editar-->
+                <!--TODO: BORRAR
+                <a href="#/plan/plan_general_info?id_it={{itPla.id}}"
+                   class="button button-positive  button-block">Seguir planeando OLD</a>-->
+                
+                <!--Le pasa como parámetro el ide lde itinerario que se desea editar-->
+                <a ng-click="continuePlan(itPla)"
+                   class="button button-positive  button-block">Seguir planeando</a>
+                
+                
+                <!--ui-sref="tabsActual.resumen" -->
+                <a ng-click="setInitialDate( itPla )"
+                   class="button button-balanced  button-block">Comenzar aventura</a>
                 <div>
                     <p>
                         <b>Resumen</b>
                         <br>
-                        <span>4 días programados</span>
+                        <span>{{itPla.days.length}} días programados</span>
                         <br>
-                        <span>10 actividades</span>
-                        <br>
-                        <span>Presupuesto: $900.000</span>
-                        <br>
+                        <span ng-show="itPla.budget">Presupuesto: ${{itPla.budget}}</span>
+                        
+                        
                     </p>
+                    
+                    <a ng-click="showConfirmRemovePlanned({{itPla.id}})"
+                        style="float:right"
+                        class="button button-outline button-assertive button-small">
+                        <i class="icon ion-trash-a"></i>
+                        Eliminar
+                    </a>
                 </div>
+            </div>
+        </div>
+        
+        <div class="list card" ng-show="planned.length === 0 ">
+            <div class="item item-divider">Lista de planes</div>
+            <div class="item item-body">
+                <h1>En este momento no tienes viajes planeados</h1>
             </div>
         </div>
     </ion-content>
